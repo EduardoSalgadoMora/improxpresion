@@ -107,6 +107,38 @@ header{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--p
 .hero-photo{aspect-ratio:4/5; border-radius:20px; border:1px solid var(--stage-line); box-shadow:0 30px 60px -30px #000; min-height:360px}
 .hero-photo .neon{top:16px; left:16px}
 
+/* ===== Carrusel de portada (estilo ImproMadrid) ===== */
+.hero-slider{position:relative; background:var(--stage); overflow:hidden; isolation:isolate}
+.slides{position:relative; min-height:clamp(520px,72vh,720px)}
+.slide{position:absolute; inset:0; opacity:0; visibility:hidden; transition:opacity .7s ease}
+.slide.is-active{opacity:1; visibility:visible}
+.slide .photo{position:absolute; inset:0}                 /* foto de fondo */
+.slide .photo .ph{max-width:20ch}
+.slide::after{content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:linear-gradient(90deg, rgba(10,8,5,.85), rgba(10,8,5,.45) 55%, rgba(10,8,5,.15) 100%),
+             linear-gradient(0deg, rgba(10,8,5,.55), transparent 45%)}
+.slide-content{position:absolute; inset:0; z-index:3; display:flex; align-items:center}
+.slide-content .inner{max-width:1140px; margin:0 auto; padding:0 24px; width:100%; color:var(--stage-ink)}
+.slide-content .eyebrow{color:var(--amber); display:inline-flex; align-items:center; gap:.6em}
+.slide-content h1{font-size:clamp(2.4rem,6.4vw,5rem); margin:.28em 0 .3em; max-width:14ch; color:#fff; text-shadow:0 3px 30px rgba(0,0,0,.55)}
+.slide-content .hand{font-family:"Caveat",cursive; color:var(--orange); font-size:1.12em; font-weight:700}
+.slide-content p{font-size:clamp(1.02rem,1.7vw,1.25rem); color:#ece2d3; max-width:44ch; margin-bottom:1.6em; text-shadow:0 2px 16px rgba(0,0,0,.5)}
+.slide-cta{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+/* Flechas */
+.slider-arrow{position:absolute; top:50%; transform:translateY(-50%); z-index:4; width:52px; height:52px; border-radius:50%;
+  background:rgba(20,16,9,.4); border:1px solid var(--stage-line); color:#fff; cursor:pointer; display:grid; place-items:center;
+  backdrop-filter:blur(6px); transition:background .18s, transform .18s}
+.slider-arrow:hover{background:var(--orange); transform:translateY(-50%) scale(1.06)}
+.slider-arrow.prev{left:18px} .slider-arrow.next{right:18px}
+/* Puntos */
+.slider-dots{position:absolute; z-index:4; left:0; right:0; bottom:22px; display:flex; justify-content:center; gap:10px}
+.dot{width:11px; height:11px; border-radius:50%; border:0; padding:0; cursor:pointer; background:rgba(255,255,255,.4); transition:background .2s, width .2s}
+.dot.on{background:var(--orange); width:28px; border-radius:6px}
+@media (max-width:640px){
+  .slider-arrow{width:42px; height:42px} .slider-arrow.prev{left:8px} .slider-arrow.next{right:8px}
+  .slide-content .inner{padding-bottom:48px}
+}
+
 /* Banda de próxima función */
 .ticket{margin:-46px auto 0; position:relative; z-index:5; max-width:1000px}
 .ticket-card{background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow);

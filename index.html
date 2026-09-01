@@ -53,32 +53,73 @@
 </header>
 
 <main id="top">
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <span class="eyebrow"><span class="live-dot"></span> En directo · Toledo y Castilla-La Mancha</span>
-        <h1>Nos lo inventamos <span class="hand">todo</span>, delante de ti.</h1>
-        <p class="hero-sub">Teatro de improvisación sin guion: historias que nacen con lo que grita el público y no volverán a existir jamás. Espectáculos, clases y talleres para empresas, colegios y bibliotecas.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#entradas">Ver próximos shows →</a>
-          <a class="btn btn-ghost on-stage" href="#clases">Apúntate a clases</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><b>+150</b><span>funciones en directo</span></div>
-          <div class="stat"><b>2026</b><span>Red de Artes Escénicas CLM</span></div>
-          <div class="stat"><b>4,9★</b><span>valoración en Google</span></div>
-        </div>
+  <!-- ================= HERO (CARRUSEL) ================= -->
+  <section class="hero-slider" aria-label="Portada" aria-roledescription="carrusel">
+    <div class="slides">
+
+      <!-- Diapositiva 1: próxima función -->
+      <div class="slide is-active" role="group" aria-roledescription="diapositiva" aria-label="1 de 4">
+        <div class="photo"><img src="img/slide-remember.jpg" alt="Impro Remember en directo" onerror="this.remove()"><div class="ph"><b>📷</b>img/slide-remember.jpg</div></div>
+        <div class="slide-content"><div class="inner">
+          <span class="eyebrow"><span class="live-dot"></span> Próxima función · +18</span>
+          <h1>Impro Remember</h1>
+          <p>Show de improvisación con música en directo. Sáb. 25 de abril · Casa de la Cultura de Illescas · 3&nbsp;€.</p>
+          <div class="slide-cta">
+            <a class="btn btn-primary" href="#entradas">Reservar entradas</a>
+            <a class="btn btn-ghost on-stage" href="#shows">Ver todos los shows</a>
+          </div>
+        </div></div>
       </div>
-      <div class="photo hero-photo">
-        <div class="neon">
-          <svg class="nx" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#ff8a3d" stroke-width="2.4" style="filter:drop-shadow(0 0 5px #ff5e1a)"/><path d="M11 10 L20 18 L29 10 L33 14 L24 22 L33 30 L29 34 L20 26 L11 34 L7 30 L16 22 L7 14 Z" fill="none" stroke="#ff8a3d" stroke-width="2" style="filter:drop-shadow(0 0 5px #ff5e1a)"/></svg>
-          <span class="nt"><span class="o">IMPRO</span><span class="b">XPRESIÓN</span></span>
-        </div>
-        <!-- Sustituye por vuestra foto: img/hero.jpg -->
-        <img src="img/hero.jpg" alt="Impro Xpresión en directo sobre el escenario" onerror="this.remove()">
-        <div class="ph"><b>📷 Foto hero</b>Vosotros en el escenario con el rótulo neón y el humo (la del violín + aro es perfecta). Archivo: <code>img/hero.jpg</code></div>
+
+      <!-- Diapositiva 2: marca -->
+      <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 4">
+        <div class="photo"><img src="img/slide-brand.jpg" alt="Impro Xpresión sobre el escenario" onerror="this.remove()"><div class="ph"><b>📷</b>img/slide-brand.jpg (violín + aro)</div></div>
+        <div class="slide-content"><div class="inner">
+          <span class="eyebrow">En directo · Toledo y Castilla-La Mancha</span>
+          <h1>Nos lo inventamos <span class="hand">todo</span>, delante de ti.</h1>
+          <p>Teatro de improvisación sin guion: historias que nacen con lo que grita el público y no volverán a existir jamás.</p>
+          <div class="slide-cta">
+            <a class="btn btn-primary" href="#shows">Ver próximos shows →</a>
+            <a class="btn btn-ghost on-stage" href="#clases">Apúntate a clases</a>
+          </div>
+        </div></div>
       </div>
+
+      <!-- Diapositiva 3: escuela -->
+      <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 4">
+        <div class="photo"><img src="img/slide-clases.jpg" alt="Clases de improvisación en Toledo" onerror="this.remove()"><div class="ph"><b>📷</b>img/slide-clases.jpg</div></div>
+        <div class="slide-content"><div class="inner">
+          <span class="eyebrow">Escuela de impro · Toledo</span>
+          <h1>Aprende impro (y a soltarte)</h1>
+          <p>Clases regulares por niveles durante todo el curso. Sin experiencia previa y con la primera clase de prueba gratis.</p>
+          <div class="slide-cta">
+            <a class="btn btn-primary" href="#clases">Reserva tu clase de prueba</a>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- Diapositiva 4: familiar -->
+      <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 4">
+        <div class="photo"><img src="img/slide-cuentos.jpg" alt="Impro Cuentos, espectáculo familiar" onerror="this.remove()"><div class="ph"><b>📷</b>img/slide-cuentos.jpg</div></div>
+        <div class="slide-content"><div class="inner">
+          <span class="eyebrow">Para toda la familia · Seleccionado CLM 2026</span>
+          <h1>Impro Cuentos</h1>
+          <p>Inventamos cuentos en directo con las ideas que grita el público. El espectáculo perfecto para familias y programaciones culturales.</p>
+          <div class="slide-cta">
+            <a class="btn btn-primary" href="#contacto">Contratar el show</a>
+          </div>
+        </div></div>
+      </div>
+
+    </div>
+
+    <button class="slider-arrow prev" aria-label="Anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="slider-arrow next" aria-label="Siguiente"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="slider-dots" role="tablist" aria-label="Diapositivas">
+      <button class="dot on" aria-label="Ir a la diapositiva 1"></button>
+      <button class="dot" aria-label="Ir a la diapositiva 2"></button>
+      <button class="dot" aria-label="Ir a la diapositiva 3"></button>
+      <button class="dot" aria-label="Ir a la diapositiva 4"></button>
     </div>
   </section>
 
@@ -303,9 +344,32 @@
 </footer>
 
 <script>
+  // Menú móvil
   var b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
   b.addEventListener('click',function(){var open=m.classList.toggle('open'); b.setAttribute('aria-expanded',open);});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded',false);});});
+
+  // Carrusel de portada
+  (function(){
+    var root=document.querySelector('.hero-slider'); if(!root) return;
+    var slides=[].slice.call(root.querySelectorAll('.slide'));
+    var dots=[].slice.call(root.querySelectorAll('.dot'));
+    var i=0, timer=null, reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function go(n){
+      slides[i].classList.remove('is-active'); if(dots[i]) dots[i].classList.remove('on');
+      i=(n+slides.length)%slides.length;
+      slides[i].classList.add('is-active'); if(dots[i]) dots[i].classList.add('on');
+    }
+    function next(){ go(i+1); } function prev(){ go(i-1); }
+    function start(){ if(reduce) return; stop(); timer=setInterval(next,6000); }
+    function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+    root.querySelector('.next').addEventListener('click',function(){ next(); start(); });
+    root.querySelector('.prev').addEventListener('click',function(){ prev(); start(); });
+    dots.forEach(function(d,n){ d.addEventListener('click',function(){ go(n); start(); }); });
+    root.addEventListener('mouseenter',stop); root.addEventListener('mouseleave',start);
+    root.addEventListener('focusin',stop); root.addEventListener('focusout',start);
+    start();
+  })();
 </script>
 </body>
 </html>
