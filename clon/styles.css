@@ -42,6 +42,16 @@ img{max-width:100%; display:block}
 .btn-orange:hover{background:var(--orange-dark)}
 .btn-white{background:#fff; color:var(--orange-dark); font-weight:800}
 
+/* Fuente de marca (menú y títulos). Sube el archivo a clon/assets/fonts/ */
+@font-face{
+  font-family:"Alphakind";
+  src:url("assets/fonts/alphakind.woff2") format("woff2"),
+      url("assets/fonts/alphakind.woff") format("woff"),
+      url("assets/fonts/alphakind.ttf") format("truetype"),
+      url("assets/fonts/alphakind.otf") format("opentype");
+  font-display:swap;
+}
+
 /* ===== Topbar ===== */
 .topbar{background:var(--blue-dark); font-size:13px}
 .topbar-inner{max-width:1200px; margin:0 auto; padding:6px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px 20px; flex-wrap:wrap}
@@ -58,11 +68,9 @@ img{max-width:100%; display:block}
 .header{background:var(--blue); position:sticky; top:0; z-index:50}
 .header-inner{max-width:1200px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px}
 .brand{display:flex; align-items:center; gap:12px}
-.brand svg{width:52px; height:52px; flex:0 0 auto}
-.brand .name{font-weight:800; font-size:1.5rem; color:#fff; line-height:1; letter-spacing:.5px}
-.brand .name span{color:var(--orange)}
+.brand-logo{height:54px; width:auto; display:block}
 .nav{display:flex; align-items:center; gap:30px}
-.nav a{color:#fff; font-weight:700; font-size:.95rem; letter-spacing:.3px; text-transform:uppercase; transition:color .15s}
+.nav a{color:#fff; font-family:"Alphakind","Poppins",sans-serif; font-weight:700; font-size:1.15rem; letter-spacing:.5px; transition:color .15s}
 .nav a:hover{color:#ffd9b8}
 .menu-btn{display:none; background:none; border:0; color:#fff; cursor:pointer; padding:4px}
 #mnav{display:none; background:var(--blue-dark)}
@@ -172,7 +180,7 @@ img{max-width:100%; display:block}
   .nav{display:none}
   .menu-btn{display:block}
   #mnav.open{display:flex; flex-direction:column}
-  #mnav a{color:#fff; padding:13px 24px; border-top:1px solid rgba(255,255,255,.12); font-weight:700; text-transform:uppercase; font-size:.9rem}
+  #mnav a{color:#fff; padding:13px 24px; border-top:1px solid rgba(255,255,255,.12); font-family:"Alphakind","Poppins",sans-serif; font-weight:700; font-size:1.1rem}
 }
 @media (max-width:560px){
   .shows-grid{grid-template-columns:1fr 1fr; gap:14px}
