@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impro Xpresión — Teatro de improvisación en Toledo</title>
+  <meta name="description" content="Impro Xpresión: teatro de improvisación en directo en Toledo y Castilla-La Mancha. Espectáculos, clases de impro y talleres para empresas, colegios y bibliotecas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.45-5.2a2.6 2.6 0 0 0-1.8-1.8C18.9 4.5 12 4.5 12 4.5s-6.9 0-8.7.5A2.6 2.6 0 0 0 1.5 6.8C1 8.5 1 12 1 12s0 3.5.5 5.2a2.6 2.6 0 0 0 1.8 1.8c1.8.5 8.7.5 8.7.5s6.9 0 8.7-.5a2.6 2.6 0 0 0 1.8-1.8C23 15.5 23 12 23 12zM9.8 15V9l5.2 3z"/></svg></a>
+    </div>
+    <div class="topbar-links">
+      <a href="assets/dossier-improxpresion.pdf" target="_blank" rel="noopener">📄 Dossier</a>
+      <a href="mailto:improxpresion@gmail.com">✉️ improxpresion@gmail.com</a>
+      <a href="tel:+34621265518">📞 +34 621 26 55 18</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CABECERA ===== -->
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Impro Xpresión">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#ffffff"/><path d="M11 10 L20 18 L29 10 L33 14 L24 22 L33 30 L29 34 L20 26 L11 34 L7 30 L16 22 L7 14 Z" fill="#F5821F"/></svg>
+      <span class="name">IMPRO<span>XPRESIÓN</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#espectaculos">Espectáculos</a>
+      <a href="#clases">Clases de impro en Toledo</a>
+      <a href="#talleres">Talleres de formación</a>
+      <a href="#nosotros">Sobre nosotros</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div id="mnav">
+    <a href="#espectaculos">Espectáculos</a>
+    <a href="#clases">Clases de impro en Toledo</a>
+    <a href="#talleres">Talleres de formación</a>
+    <a href="#nosotros">Sobre nosotros</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO CARRUSEL ===== -->
+  <section class="hero" aria-label="Portada">
+    <div class="hero-slides">
+      <div class="hslide on"><img src="assets/slide-1.jpg" alt="" onerror="this.remove()"><div class="ph">📷 assets/slide-1.jpg</div></div>
+      <div class="hslide"><img src="assets/slide-2.jpg" alt="" onerror="this.remove()"><div class="ph">📷 assets/slide-2.jpg</div></div>
+      <div class="hslide"><img src="assets/slide-3.jpg" alt="" onerror="this.remove()"><div class="ph">📷 assets/slide-3.jpg</div></div>
+      <div class="hslide"><img src="assets/slide-4.jpg" alt="" onerror="this.remove()"><div class="ph">📷 assets/slide-4.jpg</div></div>
+    </div>
+    <button class="h-arrow prev" aria-label="Anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="h-arrow next" aria-label="Siguiente"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="h-dots">
+      <button class="on" aria-label="Diapositiva 1"></button>
+      <button aria-label="Diapositiva 2"></button>
+      <button aria-label="Diapositiva 3"></button>
+      <button aria-label="Diapositiva 4"></button>
+    </div>
+  </section>
+
+  <!-- ===== ¿QUÉ ES? ===== -->
+  <section class="sec" id="nosotros">
+    <div class="wrap sec-center">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2 class="sec-title">¿Qué es improXpresión?</h2>
+      <span class="rule"></span>
+      <p class="lead">
+        Somos <strong>ImproXpresión</strong>, compañía de teatro de improvisación
+        especializada en espectáculos donde el público es parte del equipo. Trabajamos
+        formatos <strong>familiares, escolares y de adulto</strong>, fusionando narrativa,
+        música y juego escénico para que cada función sea única e irrepetible.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== ESPECTÁCULOS (azul) ===== -->
+  <section class="sec shows" id="espectaculos">
+    <div class="wrap sec-center">
+      <span class="eyebrow">¡Esto es lo que hacemos!</span>
+      <h2 class="sec-title">Nuestros espectáculos</h2>
+      <span class="rule"></span>
+      <p class="lead">Teatro de improvisación 100&nbsp;% en directo para público familiar, escolar y adulto.</p>
+    </div>
+    <div class="wrap">
+      <div class="shows-grid">
+        <div class="poster"><img src="assets/show-impro-cuentos.jpg" alt="Impro Cuentos" onerror="this.remove()"><span>📷 Impro Cuentos</span></div>
+        <div class="poster"><img src="assets/show-el-anciano.jpg" alt="El Anciano" onerror="this.remove()"><span>📷 El Anciano</span></div>
+        <div class="poster"><img src="assets/show-la-biblioteca.jpg" alt="La Biblioteca" onerror="this.remove()"><span>📷 La Biblioteca</span></div>
+        <div class="poster"><img src="assets/show-impro-remember.jpg" alt="Impro Remember" onerror="this.remove()"><span>📷 Impro Remember</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RED CLM ===== -->
+  <section class="clm">
+    <div class="clm-band">
+      <span class="clm-badge">★ Seleccionados · Red de CLM 2026 ★</span>
+      <h3>Estamos en la Red de Artes Escénicas y Música de Castilla-La Mancha</h3>
+      <p><strong>Impro Cuentos</strong> forma parte del catálogo 2026 de la Red de CLM. ¿Programas cultura en tu municipio? Llevamos el espectáculo a tu espacio.</p>
+      <a class="btn btn-white" href="assets/dossier-improxpresion.pdf" target="_blank" rel="noopener">📄 Descargar dossier con rider</a>
+    </div>
+  </section>
+
+  <!-- ===== AGENDA ===== -->
+  <section class="sec" id="agenda">
+    <div class="wrap sec-center">
+      <span class="eyebrow">Agenda</span>
+      <h2 class="sec-title dark">Próximas funciones</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="wrap">
+      <div class="ag-list">
+        <div class="ag-row">
+          <div class="ag-date"><span class="d">25</span><span class="m">ABR</span></div>
+          <div class="ag-info"><h4>Impro Remember Show</h4><p>Casa de la Cultura · Illescas · 18:30 · +18</p></div>
+          <a class="btn btn-orange" href="#">Entradas</a>
+        </div>
+        <div class="ag-row">
+          <div class="ag-date"><span class="d">—</span><span class="m">2026</span></div>
+          <div class="ag-info"><h4>Impro Cuentos</h4><p>Para toda la familia · 60 min · Fecha por confirmar</p></div>
+          <a class="btn btn-orange ag-soon" href="#">Próximamente</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RRSS ===== -->
+  <section class="sec rrss" id="clases">
+    <div class="wrap sec-center">
+      <span class="eyebrow" style="color:#ffd9b8">¡Síguenos!</span>
+      <h2 class="sec-title">Síguenos en nuestras redes</h2>
+      <p class="lead" style="color:#c9c9c9">Vídeos, próximas fechas y sorteos de entradas y camisetas.</p>
+    </div>
+    <div class="wrap">
+      <div class="rrss-grid">
+        <a class="rrss-item" href="#" aria-label="Instagram"><span class="rrss-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><b>Instagram</b></a>
+        <a class="rrss-item" href="#" aria-label="YouTube"><span class="rrss-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.45-5.2a2.6 2.6 0 0 0-1.8-1.8C18.9 4.5 12 4.5 12 4.5s-6.9 0-8.7.5A2.6 2.6 0 0 0 1.5 6.8C1 8.5 1 12 1 12s0 3.5.5 5.2a2.6 2.6 0 0 0 1.8 1.8c1.8.5 8.7.5 8.7.5s6.9 0 8.7-.5a2.6 2.6 0 0 0 1.8-1.8C23 15.5 23 12 23 12zM9.8 15V9l5.2 3z"/></svg></span><b>YouTube</b></a>
+        <a class="rrss-item" href="#" aria-label="Facebook"><span class="rrss-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></span><b>Facebook</b></a>
+        <a class="rrss-item" href="#" aria-label="TikTok"><span class="rrss-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 3.9 4 4.2v3c-1.5 0-2.9-.5-4-1.3V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.8V3h3z"/></svg></span><b>TikTok</b></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TALLERES (marcador, pendiente de captura) ===== -->
+  <section class="sec" id="talleres" style="text-align:center">
+    <div class="wrap sec-center">
+      <span class="eyebrow">Formación</span>
+      <h2 class="sec-title dark">Talleres de formación</h2>
+      <span class="rule"></span>
+      <p class="lead">Sección pendiente: mándame la captura de cómo la tienes y la reconstruyo aquí.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  © 2026 Impro Xpresión · Teatro de improvisación · Toledo
+</footer>
+
+<script>
+  // Menú móvil
+  var b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open'); b.setAttribute('aria-expanded',o);});
+
+  // Carrusel del hero
+  (function(){
+    var slides=[].slice.call(document.querySelectorAll('.hslide'));
+    var dots=[].slice.call(document.querySelectorAll('.h-dots button'));
+    if(!slides.length) return;
+    var i=0, t=null, reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function go(n){ slides[i].classList.remove('on'); if(dots[i])dots[i].classList.remove('on');
+      i=(n+slides.length)%slides.length; slides[i].classList.add('on'); if(dots[i])dots[i].classList.add('on'); }
+    function next(){go(i+1)} function prev(){go(i-1)}
+    function start(){ if(reduce)return; stop(); t=setInterval(next,6000); } function stop(){ if(t){clearInterval(t);t=null;} }
+    document.querySelector('.h-arrow.next').addEventListener('click',function(){next();start();});
+    document.querySelector('.h-arrow.prev').addEventListener('click',function(){prev();start();});
+    dots.forEach(function(d,n){ d.addEventListener('click',function(){go(n);start();}); });
+    var hero=document.querySelector('.hero');
+    hero.addEventListener('mouseenter',stop); hero.addEventListener('mouseleave',start);
+    start();
+  })();
+</script>
+</body>
+</html>
