@@ -82,7 +82,7 @@ img{max-width:100%; display:block}
 .hslide.on{opacity:1; visibility:visible}
 .hslide .ph{position:absolute; inset:0; display:grid; place-content:center; text-align:center; color:#fff;
   background:linear-gradient(120deg,#243b6b,#111); font-weight:700; letter-spacing:.5px}
-.hslide img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#0d0d0d}
+.hslide img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#0d0d0d}
 .h-arrow{position:absolute; top:50%; transform:translateY(-50%); z-index:3; width:46px; height:46px; border-radius:50%;
   background:rgba(0,0,0,.35); border:0; color:#fff; cursor:pointer; display:grid; place-items:center; transition:background .15s}
 .h-arrow:hover{background:var(--orange)}
