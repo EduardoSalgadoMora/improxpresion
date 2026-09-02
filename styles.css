@@ -235,8 +235,13 @@ img{max-width:100%; display:block}
 .foot{background:#0e0e0e; color:#9a9a9a; padding:34px 0; text-align:center; font-size:14px}
 .foot a{color:#cfcfcf}
 
+/* Instagram feed */
+.ig-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:start; justify-items:center}
+.ig-grid .instagram-media{width:100%!important; min-width:0!important; margin:0!important}
+
 @media (max-width:900px){
   .shows-grid{grid-template-columns:repeat(2,1fr)}
+  .ig-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:760px){
   .nav{display:none}
@@ -246,7 +251,16 @@ img{max-width:100%; display:block}
 }
 @media (max-width:560px){
   .shows-grid{grid-template-columns:1fr 1fr; gap:14px}
+  .ig-grid{grid-template-columns:1fr; gap:18px}
   .ag-row{flex-wrap:wrap}
   .sec{padding:46px 0}
+  /* Topbar en una sola linea en movil */
+  .topbar{font-size:11px}
+  .topbar-inner{flex-wrap:nowrap; gap:6px; padding:6px 10px}
+  .topbar-social{gap:4px}
+  .topbar-social a{width:22px; height:22px}
+  .topbar-social svg{width:13px; height:13px}
+  .topbar-links{gap:10px; flex-wrap:nowrap; white-space:nowrap}
+  .topbar-links a{gap:4px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
