@@ -248,5 +248,13 @@ img{max-width:100%; display:block}
   .shows-grid{grid-template-columns:1fr 1fr; gap:14px}
   .ag-row{flex-wrap:wrap}
   .sec{padding:46px 0}
+  /* Topbar en una sola linea en movil */
+  .topbar{font-size:11px}
+  .topbar-inner{flex-wrap:nowrap; gap:6px; padding:6px 10px}
+  .topbar-social{gap:4px}
+  .topbar-social a{width:22px; height:22px}
+  .topbar-social svg{width:13px; height:13px}
+  .topbar-links{gap:10px; flex-wrap:nowrap; white-space:nowrap}
+  .topbar-links a{gap:4px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
