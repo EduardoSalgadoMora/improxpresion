@@ -8,7 +8,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Raleway:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#1668c1">
+<link rel="canonical" href="https://eduardosalgadomora.github.io/improxpresion/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Impro Xpresión">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Impro Xpresión — Teatro de improvisación en Toledo">
+<meta property="og:description" content="Impro Xpresión: teatro de improvisación en directo en Toledo y Castilla-La Mancha. Espectáculos, clases de impro y talleres para empresas, colegios y bibliotecas.">
+<meta property="og:url" content="https://eduardosalgadomora.github.io/improxpresion/">
+<meta property="og:image" content="https://eduardosalgadomora.github.io/improxpresion/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Impro Xpresión — Teatro de improvisación en Toledo">
+<meta name="twitter:description" content="Impro Xpresión: teatro de improvisación en directo en Toledo y Castilla-La Mancha. Espectáculos, clases de impro y talleres para empresas, colegios y bibliotecas.">
+<meta name="twitter:image" content="https://eduardosalgadomora.github.io/improxpresion/assets/og.jpg">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"PerformingGroup","name":"Impro Xpresión","alternateName":"ImproXpresión","description":"Compañía y escuela de teatro de improvisación en Toledo. Espectáculos, clases y talleres.","url":"https://eduardosalgadomora.github.io/improxpresion/","email":"improxpresion@gmail.com","telephone":"+34621265518","logo":"https://eduardosalgadomora.github.io/improxpresion/assets/favicon-256.png","image":"https://eduardosalgadomora.github.io/improxpresion/assets/og.jpg","areaServed":"Castilla-La Mancha","address":{"@type":"PostalAddress","addressLocality":"Toledo","addressRegion":"Castilla-La Mancha","addressCountry":"ES"},"sameAs":[]}
+</script>
 </head>
 <body>
 
@@ -35,20 +54,34 @@
       <img class="brand-logo" src="assets/logo-blanco.png" alt="Impro Xpresión">
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="#espectaculos">Espectáculos</a>
+      <div class="nav-item">
+        <a class="drop-toggle" href="index.html#espectaculos">Espectáculos</a>
+        <div class="drop-menu">
+          <a href="impro-cuentos.html">Impro Cuentos</a>
+          <a href="el-anciano.html">El Anciano</a>
+          <a href="la-biblioteca.html">La Biblioteca</a>
+          <a href="impro-remember.html">Impro Remember</a>
+        </div>
+      </div>
       <a href="clases.html">Clases de impro en Toledo</a>
       <a href="talleres.html">Talleres de formación</a>
-      <a href="#nosotros">Sobre nosotros</a>
+      <a href="nosotros.html">Sobre nosotros</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
   <div id="mnav">
-    <a href="#espectaculos">Espectáculos</a>
+    <a href="index.html#espectaculos">Espectáculos</a>
+    <div class="sub">
+      <a href="impro-cuentos.html">Impro Cuentos</a>
+      <a href="el-anciano.html">El Anciano</a>
+      <a href="la-biblioteca.html">La Biblioteca</a>
+      <a href="impro-remember.html">Impro Remember</a>
+    </div>
     <a href="clases.html">Clases de impro en Toledo</a>
     <a href="talleres.html">Talleres de formación</a>
-    <a href="#nosotros">Sobre nosotros</a>
+    <a href="nosotros.html">Sobre nosotros</a>
   </div>
 </header>
 
@@ -128,17 +161,38 @@
       <h2 class="sec-title dark">Próximas funciones</h2>
       <span class="rule"></span>
     </div>
+    <p class="ag-note">Red de Artes Escénicas y Música de Castilla-La Mancha · Otoño 2026 (nº 40044)</p>
     <div class="wrap">
-      <div class="ag-list">
-        <div class="ag-row">
-          <div class="ag-date"><span class="d">25</span><span class="m">ABR</span></div>
-          <div class="ag-info"><h4>Impro Remember Show</h4><p>Casa de la Cultura · Illescas · 18:30 · +18</p></div>
-          <a class="btn btn-orange ag-soon" href="#">Próximamente</a>
+      <div class="ag-list" id="agList">
+        <div class="ag-row" data-date="2026-08-21">
+          <div class="ag-date"><span class="d">21</span><span class="m">AGO</span></div>
+          <div class="ag-info"><h4>Argamasilla de Alba</h4><small>Viernes · 20:00 h</small></div>
+          <span class="ag-status"></span>
         </div>
-        <div class="ag-row">
-          <div class="ag-date"><span class="d">—</span><span class="m">2026</span></div>
-          <div class="ag-info"><h4>Impro Cuentos</h4><p>Para toda la familia · 60 min · Fecha por confirmar</p></div>
-          <a class="btn btn-orange ag-soon" href="#">Próximamente</a>
+        <div class="ag-row" data-date="2026-08-28">
+          <div class="ag-date"><span class="d">28</span><span class="m">AGO</span></div>
+          <div class="ag-info"><h4>Villafranca de los Caballeros</h4><small>Viernes · 22:00 h</small></div>
+          <span class="ag-status"></span>
+        </div>
+        <div class="ag-row" data-date="2026-10-23">
+          <div class="ag-date"><span class="d">23</span><span class="m">OCT</span></div>
+          <div class="ag-info"><h4>Membrilla</h4><small>Viernes · 11:00 h</small></div>
+          <span class="ag-status"></span>
+        </div>
+        <div class="ag-row" data-date="2026-10-26">
+          <div class="ag-date"><span class="d">26</span><span class="m">OCT</span></div>
+          <div class="ag-info"><h4>Bonete</h4><small>Lunes · 12:00 h</small></div>
+          <span class="ag-status"></span>
+        </div>
+        <div class="ag-row" data-date="2026-12-19">
+          <div class="ag-date"><span class="d">19</span><span class="m">DIC</span></div>
+          <div class="ag-info"><h4>Elche de la Sierra</h4><small>Sábado · 18:00 h</small></div>
+          <span class="ag-status"></span>
+        </div>
+        <div class="ag-row" data-date="2027-01-03">
+          <div class="ag-date"><span class="d">03</span><span class="m">ENE</span></div>
+          <div class="ag-info"><h4>Torralba de Calatrava</h4><small>Domingo · 18:00 h</small></div>
+          <span class="ag-status"></span>
         </div>
       </div>
     </div>
@@ -189,6 +243,17 @@
     var hero=document.querySelector('.hero');
     hero.addEventListener('mouseenter',stop); hero.addEventListener('mouseleave',start);
     start();
+  })();
+
+  // Agenda: marcar pasadas / próximas
+  (function(){
+    var hoy=new Date(); hoy.setHours(0,0,0,0);
+    [].forEach.call(document.querySelectorAll('#agList .ag-row'),function(row){
+      var d=new Date(row.getAttribute('data-date')+'T00:00:00');
+      var st=row.querySelector('.ag-status');
+      if(d < hoy){ row.classList.add('past'); st.classList.add('past'); st.textContent='Te lo perdiste'; }
+      else { st.classList.add('up'); st.textContent='Próxima'; }
+    });
   })();
 </script>
 </body>
