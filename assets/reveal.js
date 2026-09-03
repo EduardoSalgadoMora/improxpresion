@@ -59,7 +59,7 @@
   // Aparición al hacer scroll
   if(reduce) return;
   var sel=['.sec-center','.poster','.ag-row','.member2','.content-sec','.clm-band',
-           '.rrss-item','.taller-img','.infocard','.page-banner','.g-cell','.show-ficha','.video-wrap','.stat'];
+           '.rrss-item','.taller-img','.infocard','.page-banner','.g-cell','.show-ficha','.video-wrap','.stat','.hist-chapter'];
   var els=[];
   sel.forEach(function(s){ [].forEach.call(document.querySelectorAll(s), function(e){ if(els.indexOf(e)<0) els.push(e); }); });
   els.forEach(function(e){ e.classList.add('reveal'); });
