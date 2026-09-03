@@ -53,7 +53,8 @@
       <h1>Área privada</h1>
       <p>Contenido interno del equipo. Introduce la contraseña.</p>
       <form id="gateForm" autocomplete="off">
-        <input type="password" id="gatePass" placeholder="Contraseña" aria-label="Contraseña" autofocus>
+        <input type="text" id="gateUser" placeholder="Usuario" aria-label="Usuario" autocapitalize="off" autocorrect="off" spellcheck="false" autofocus>
+        <input type="password" id="gatePass" placeholder="Contraseña" aria-label="Contraseña">
         <button type="submit">Entrar</button>
         <p class="gate-err" id="gateErr" role="alert"></p>
       </form>
@@ -119,10 +120,11 @@
 
 <script>
 (function(){
-  // Hash SHA-256 de la contraseña. NO es seguridad real: solo frena al curioso,
-  // ya que todo se ejecuta en el navegador. Para cambiar la contraseña, genera el
-  // nuevo hash y sustitúyelo aquí.  Contraseña provisional: improxpresion2026
-  var PASS_HASH = "4037ce145353e6ff6fbcbd5493f80100143f509b39635bc29b99d73d303bad28";
+  // Hash SHA-256 de "usuario:contraseña". NO es seguridad real: solo frena al
+  // curioso, ya que todo se ejecuta en el navegador. Para cambiar las credenciales,
+  // genera el nuevo hash de "usuario:contraseña" y sustitúyelo aquí.
+  // Credenciales actuales -> usuario: impro   contraseña: randomBurger
+  var CRED_HASH = "ef1d83b12c55541f9eb260358370ece253e8cbb779847edf97c835c4d31cdad2";
   var KEY = "improx_priv_ok";
   var body = document.body, gate = document.getElementById("gate");
 
@@ -139,14 +141,15 @@
   document.getElementById("gateForm").addEventListener("submit", async function(ev){
     ev.preventDefault();
     var err = document.getElementById("gateErr");
-    var val = document.getElementById("gatePass").value;
+    var user = document.getElementById("gateUser").value.trim();
+    var pass = document.getElementById("gatePass").value;
     var ok = false;
-    try { ok = (await sha256(val)) === PASS_HASH; } catch(e){ ok = false; }
+    try { ok = (await sha256(user + ":" + pass)) === CRED_HASH; } catch(e){ ok = false; }
     if (ok){
       try { sessionStorage.setItem(KEY, "1"); } catch(e){}
       unlock();
     } else {
-      err.textContent = "Contraseña incorrecta";
+      err.textContent = "Usuario o contraseña incorrectos";
       document.getElementById("gatePass").value = "";
     }
   });
