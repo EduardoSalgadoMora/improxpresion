@@ -296,9 +296,24 @@ img{max-width:100%; display:block}
   background-image:linear-gradient(rgba(8,8,10,.74),rgba(8,8,10,.74)), var(--px-img);
   background-size:cover; background-position:center; background-attachment:fixed}
 
-/* ===== Banda "Hemos actuado en" ===== */
+/* ===== Banda "De gira" ===== */
 .tour{background:var(--paper-2); text-align:center}
-.tour .count{font-family:"Poppins",sans-serif; font-weight:800; font-size:clamp(40px,8vw,72px); color:var(--orange); line-height:1}
-.tour .count-label{color:var(--muted); font-weight:600; margin-top:6px; letter-spacing:.06em; text-transform:uppercase; font-size:.9rem}
-.tour-towns{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:26px; max-width:840px; margin-left:auto; margin-right:auto}
-.tour-towns span{background:#fff; border:1px solid var(--line); color:var(--ink); font-weight:600; padding:.5em 1.1em; border-radius:999px; box-shadow:var(--shadow)}
+.tour-stats{display:flex; flex-wrap:wrap; justify-content:center; align-items:baseline; gap:26px 34px; margin-top:26px}
+.tour-stats .stat{min-width:130px}
+.tour .count{font-family:"Poppins",sans-serif; font-weight:800; font-size:clamp(38px,6vw,58px); color:var(--orange); line-height:1; min-height:1em}
+.tour .count-fun.is-final{color:var(--blue); font-size:clamp(30px,4.4vw,44px)}
+.tour .count-label{color:var(--muted); font-weight:600; margin-top:6px; letter-spacing:.06em; text-transform:uppercase; font-size:.85rem}
+@keyframes tour-pop{0%{transform:scale(.4) rotate(-6deg); opacity:0}60%{transform:scale(1.18) rotate(3deg)}100%{transform:scale(1) rotate(0); opacity:1}}
+.count-pop{animation:tour-pop .5s cubic-bezier(.2,1.4,.5,1) both; display:inline-block}
+
+/* Carrusel de localidades */
+.tour-carousel{margin-top:38px}
+.tc-label{color:var(--muted); font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:.85rem}
+.tc-rotator{position:relative; height:2.4em; margin-top:8px}
+.tc-town{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center;
+  font-family:"Poppins",sans-serif; font-weight:800; font-size:clamp(26px,5vw,46px); color:var(--orange);
+  line-height:1.1; opacity:0; transform:translateY(16px) scale(.96); transition:opacity .5s ease, transform .5s ease; pointer-events:none}
+.tc-town.is-active{opacity:1; transform:none}
+.tc-rotator.static{position:static; height:auto; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:14px}
+.tc-rotator.static .tc-town{position:static; inset:auto; opacity:1; transform:none; font:600 1rem/1 "Poppins",sans-serif;
+  color:var(--ink); background:#fff; border:1px solid var(--line); padding:.55em 1.1em; border-radius:999px; box-shadow:var(--shadow)}
