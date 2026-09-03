@@ -403,3 +403,24 @@ img{max-width:100%; display:block}
   .wa-float span{display:none}
   .wa-float{padding:12px}
 }
+
+/* ===== Banner de cookies ===== */
+#cookieBanner{position:fixed; left:0; right:0; bottom:0; z-index:120;
+  background:#0e0e0e; color:#eaeaea; box-shadow:0 -8px 30px -12px rgba(0,0,0,.6);
+  animation:ck-up .35s ease both}
+@keyframes ck-up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+#cookieBanner .ck-inner{max-width:1140px; margin:0 auto; padding:18px 24px;
+  display:flex; align-items:center; gap:20px 28px; flex-wrap:wrap; justify-content:space-between}
+#cookieBanner .ck-text{flex:1 1 420px; min-width:0}
+#cookieBanner .ck-text strong{display:block; font-size:1rem; margin-bottom:4px; color:#fff}
+#cookieBanner .ck-text p{color:#c3c3c3; font-size:.88rem; line-height:1.5; margin:0}
+#cookieBanner .ck-text a{color:var(--orange); font-weight:600; text-decoration:underline}
+#cookieBanner .ck-btns{display:flex; gap:12px; flex:0 0 auto}
+#cookieBanner .ck-btns .btn{padding:.7em 1.5em; font-size:.9rem}
+#cookieBanner .ck-reject{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.45)}
+#cookieBanner .ck-reject:hover{background:rgba(255,255,255,.12)}
+@media (max-width:560px){
+  #cookieBanner .ck-inner{padding:16px 18px; gap:14px}
+  #cookieBanner .ck-btns{width:100%}
+  #cookieBanner .ck-btns .btn{flex:1}
+}
