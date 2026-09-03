@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Libera tu arte · Juegos de Teatro e Impro</title>
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/auth.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="index.html">
+    <img src="img/logo.png" onerror="this.onerror=null;this.src='img/logo.svg'" alt="ImproXpresión">
+    <span class="brand-txt"><span class="azul">IMPRO</span><span class="naranja">XPRESIÓN</span></span>
+  </a>
+  <nav>
+    <button class="btn btn-secundario" id="btnCrearJuego">➕ Crear juego</button>
+    <a class="btn btn-secundario" href="conceptos.html">📖 Conceptos</a>
+    <a class="btn btn-secundario" href="actuaciones.html">📅 Actuaciones</a>
+    <a class="btn btn-secundario" href="mapa.html">🗺️ Mapa</a>
+    <a class="btn btn-primario" href="ficha.html">📋 Crear ficha <span class="badge-carrito" id="badgeCarrito">0</span></a>
+  </nav>
+</header>
+
+<section class="panel-busqueda">
+  <div class="fila-busqueda">
+    <input type="search" id="txtBuscar" placeholder="Buscar por título, descripción, variantes... (ej: estatus, mímica, palmada)">
+    <select id="selAutor"><option value="">Todos los autores</option></select>
+    <select id="selEdad">
+      <option value="">Todas las edades</option>
+      <option value="ninos">Niños</option>
+      <option value="adultos">Adultos</option>
+      <option value="ambos">Ambos</option>
+    </select>
+    <select id="selOrden">
+      <option value="alfa">A → Z</option>
+      <option value="cat">Por categoría</option>
+      <option value="fuente">Por fuente</option>
+    </select>
+  </div>
+  <div class="chips" id="chipsCategorias"></div>
+  <div class="fila-toggles">
+    <label><input type="checkbox" id="chkFavs"> ⭐ Solo favoritos</label>
+    <label><input type="checkbox" id="chkPropios"> 🟢 Nuevos o editados por mí</label>
+    <label><input type="checkbox" id="chkVariantes"> 🔀 Con variantes</label>
+    <button class="btn btn-secundario btn-mini" id="btnReset">↺ Reset</button>
+    <button class="btn btn-secundario btn-mini" id="btnBackup" title="Descarga un JSON con tus juegos nuevos, ediciones, favoritos y fichas">⬇ Copia de seguridad</button>
+    <button class="btn btn-secundario btn-mini" id="btnRestaurarBackup" title="Recupera una copia de seguridad">⬆ Restaurar copia</button>
+    <input type="file" id="fileBackup" accept=".json" style="display:none">
+    <span class="contador" id="contador"></span>
+  </div>
+</section>
+
+<main class="grid" id="resultados"></main>
+
+<!-- Modal detalle -->
+<div class="modal-fondo" id="modalDetalle">
+  <div class="modal">
+    <button class="cerrar" data-cierra="modalDetalle">✕</button>
+    <h2 id="detTitulo"></h2>
+    <div class="chips-mini" id="detCats"></div>
+    <div class="seccion"><h4>Cómo se juega</h4><p id="detDesc"></p></div>
+    <div class="seccion" id="detVarWrap"><h4>Variantes</h4><p id="detVar"></p></div>
+    <div class="seccion"><h4>Fuente</h4><p id="detFuente"></p></div>
+    <div class="acciones">
+      <button class="btn btn-rojo" id="detEliminar" style="display:none">🗑 Eliminar</button>
+      <button class="btn btn-rojo" id="detRestaurar" style="display:none">↺ Restaurar original</button>
+      <button class="btn btn-secundario" id="detEditar">✏ Editar</button>
+      <button class="btn btn-secundario" id="detFav">⭐ Favorito</button>
+      <button class="btn btn-verde" id="detAnadir">➕ Añadir a la ficha</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal crear/editar juego -->
+<div class="modal-fondo" id="modalCrear">
+  <div class="modal">
+    <button class="cerrar" data-cierra="modalCrear">✕</button>
+    <h2 id="crearTitulo">Crear juego</h2>
+    <label>Título *</label>
+    <input type="text" id="cjTitulo" placeholder="Nombre del juego">
+    <label>Categorías * (haz clic para seleccionar)</label>
+    <div class="chips" id="cjCats"></div>
+    <input type="text" id="cjCatNueva" placeholder="...o escribe una categoría nueva y pulsa Enter" style="margin-top:6px">
+    <label>Descripción / mecánica *</label>
+    <textarea id="cjDesc" placeholder="Cómo se juega, qué trabaja, consejos de dirección..."></textarea>
+    <label>Variantes</label>
+    <textarea id="cjVar" style="min-height:50px"></textarea>
+    <label>Edad</label>
+    <select id="cjEdad">
+      <option value="ambos">Ambos</option>
+      <option value="ninos">Niños</option>
+      <option value="adultos">Adultos</option>
+    </select>
+    <label>Autor / fuente</label>
+    <input type="text" id="cjAutor" placeholder="Edu" value="Edu">
+    <div class="acciones">
+      <button class="btn btn-secundario" data-cierra="modalCrear">Cancelar</button>
+      <button class="btn btn-primario" id="cjGuardar">💾 Guardar juego</button>
+    </div>
+  </div>
+</div>
+
+<script src="data/juegos.js"></script>
+<script src="data/conceptos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

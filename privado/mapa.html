@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Mapa de La Sagra · ImproXpresión</title>
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/auth.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="index.html">
+    <img src="img/logo.png" onerror="this.onerror=null;this.src='img/logo.svg'" alt="ImproXpresión">
+    <span class="brand-txt"><span class="azul">IMPRO</span><span class="naranja">XPRESIÓN</span></span>
+  </a>
+  <span class="brand-sub">🗺️ Mapa de La Sagra</span>
+  <nav>
+    <a class="btn btn-secundario" href="index.html">🎭 Juegos</a>
+    <a class="btn btn-secundario" href="conceptos.html">📖 Conceptos</a>
+    <a class="btn btn-secundario" href="actuaciones.html">📅 Actuaciones</a>
+    <a class="btn btn-primario" href="ficha.html">📋 Crear ficha <span class="badge-carrito" id="badgeCarrito">0</span></a>
+  </nav>
+</header>
+
+<section class="mapa-intro">
+  <div>
+    <h1>Dónde actuar en La Sagra</h1>
+    <p>Mapa corocromático de los municipios de La Sagra (Toledo y borde madrileño). El color indica la <strong>población</strong> (más oscuro = más habitantes). <strong>Pincha en un pueblo</strong> para ver su población, espacios donde actuar, festivales y los contactos de cultura. Puedes editar y guardar la información de cada pueblo: se queda en este navegador y entra en la <em>copia de seguridad</em>.</p>
+  </div>
+  <div class="mapa-buscar">
+    <input type="search" id="buscarMuni" placeholder="🔎 Buscar pueblo…" autocomplete="off">
+    <div class="sugerencias" id="sugerencias"></div>
+  </div>
+</section>
+
+<div class="mapa-wrap">
+  <div class="mapa-col">
+    <div class="mapa-svg-box">
+      <svg id="mapaSvg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de los municipios de La Sagra"></svg>
+    </div>
+    <div class="leyenda">
+      <div class="leyenda-eje"><span>Menos población</span><span class="flecha">Magnitud →</span><span>Más población</span></div>
+      <div class="leyenda-barra" id="leyendaBarra"></div>
+      <div class="leyenda-pie">Leyenda del valor · población aproximada (INE)</div>
+    </div>
+  </div>
+
+  <aside class="mapa-panel" id="panel" aria-live="polite">
+    <div class="panel-vacio" id="panelVacio">
+      <div class="panel-vacio-icono">🗺️</div>
+      <p>Selecciona un municipio en el mapa para ver su ficha.</p>
+    </div>
+
+    <div class="panel-ficha" id="panelFicha" hidden>
+      <button class="panel-cerrar" id="panelCerrar" title="Cerrar">✕</button>
+      <div class="panel-cab">
+        <span class="panel-swatch" id="pSwatch"></span>
+        <div>
+          <h2 id="pNombre"></h2>
+          <span class="panel-prov" id="pProv"></span>
+          <span class="panel-pob" id="pPob"></span>
+        </div>
+      </div>
+
+      <div class="panel-sec">
+        <h4>🏛️ Espacios donde actuar</h4>
+        <textarea id="pEspacios" rows="3" placeholder="Casa de la Cultura, auditorio, plaza mayor, colegio… (uno por línea)"></textarea>
+      </div>
+
+      <div class="panel-sec">
+        <h4>🎉 Festivales y programación</h4>
+        <textarea id="pFestivales" rows="3" placeholder="Festival de calle, muestras, fiestas patronales con programación… (uno por línea)"></textarea>
+      </div>
+
+      <div class="panel-sec">
+        <h4>📇 Contacto de cultura</h4>
+        <div class="panel-grid">
+          <label>Web / sede electrónica del Ayuntamiento
+            <input type="text" id="pWeb" placeholder="www.ayuntamiento…">
+          </label>
+          <label>Teléfono del Ayuntamiento
+            <input type="text" id="pTel" placeholder="925 00 00 00">
+          </label>
+          <label>Concejalía de Cultura (persona / cargo)
+            <input type="text" id="pCargo" placeholder="Concejal/a o técnico programador">
+          </label>
+          <label>Teléfono / móvil de contacto
+            <input type="text" id="pCargoTel" placeholder="Teléfono directo">
+          </label>
+          <label>Email de cultura
+            <input type="text" id="pEmail" placeholder="cultura@…">
+          </label>
+        </div>
+      </div>
+
+      <div class="panel-sec">
+        <h4>📝 Notas</h4>
+        <textarea id="pNotas" rows="2" placeholder="Aforo, cachés, contactos de años anteriores, condiciones…"></textarea>
+      </div>
+
+      <div class="panel-enlaces">
+        <a class="btn btn-secundario btn-mini" id="pBuscarWeb" target="_blank" rel="noopener">🌐 Buscar Ayuntamiento</a>
+        <a class="btn btn-secundario btn-mini" id="pMapaWeb" target="_blank" rel="noopener">📍 Cómo llegar</a>
+      </div>
+
+      <div class="panel-acciones">
+        <span class="panel-guardado" id="pGuardado"></span>
+        <button class="btn btn-secundario btn-mini" id="pRestaurar" title="Vuelve a los datos de partida">↺ Restaurar</button>
+        <button class="btn btn-verde" id="pGuardar">💾 Guardar</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script src="data/juegos.js"></script>
+<script src="data/conceptos.js"></script>
+<script src="data/sagra.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/mapa.js"></script>
+</body>
+</html>

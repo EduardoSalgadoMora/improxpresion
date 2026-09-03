@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Conceptos · Libera tu arte</title>
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/auth.js"></script>
+<style>
+.concepto{background:var(--panel);border:1px solid var(--borde);border-radius:var(--radio);padding:16px 20px;box-shadow:var(--sombra);cursor:pointer;transition:.15s}
+.concepto:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(43,36,55,.13)}
+.concepto h3{margin:0 0 6px;font-size:1.05rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.concepto .def{font-size:.9rem;color:var(--tinta);margin:0}
+.concepto .def.recortada{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;color:var(--tinta2)}
+.concepto .aplicar{margin:10px 0 0;font-size:.86rem;background:#fdf7e9;border-left:3px solid var(--acento2);padding:8px 12px;border-radius:0 8px 8px 0;display:none}
+.concepto.abierto .aplicar{display:block}
+.concepto .fuente-c{margin-top:8px;font-size:.74rem;color:var(--tinta2);display:none}
+.concepto.abierto .fuente-c{display:block}
+.concepto .acciones-c{margin-top:10px;display:none;gap:8px}
+.concepto.abierto .acciones-c{display:flex;flex-wrap:wrap}
+.grid-conceptos{max-width:1000px;margin:0 auto 40px;padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.titulo-cat{max-width:1000px;margin:26px auto 4px;padding:0 16px;font-size:.85rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--acento);font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="index.html">
+    <img src="img/logo.png" onerror="this.onerror=null;this.src='img/logo.svg'" alt="ImproXpresión">
+    <span class="brand-txt"><span class="azul">IMPRO</span><span class="naranja">XPRESIÓN</span></span>
+  </a>
+  <span class="brand-sub">📖 Conceptos</span>
+  <nav>
+    <a class="btn btn-secundario" href="index.html">🎭 Juegos</a>
+    <a class="btn btn-secundario" href="actuaciones.html">📅 Actuaciones</a>
+    <a class="btn btn-secundario" href="mapa.html">🗺️ Mapa</a>
+    <a class="btn btn-primario" href="ficha.html">📋 Crear ficha <span class="badge-carrito" id="badgeCarrito">0</span></a>
+  </nav>
+</header>
+
+<section class="panel-busqueda">
+  <div class="fila-busqueda">
+    <input type="search" id="txtBuscar" placeholder="Buscar concepto... (ej: estatus, plataforma, acción física, bloqueo)">
+    <select id="selFuente"><option value="">Todas las fuentes</option></select>
+  </div>
+  <div class="chips" id="chipsCategorias"></div>
+  <div class="fila-toggles">
+    <label><input type="checkbox" id="chkAbrirTodo"> 📖 Expandir todo</label>
+    <button class="btn btn-secundario btn-mini" id="btnReset">↺ Reset</button>
+    <span class="contador" id="contador"></span>
+  </div>
+</section>
+
+<div id="listado"></div>
+
+<script src="data/juegos.js"></script>
+<script src="data/conceptos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/conceptos.js"></script>
+</body>
+</html>
