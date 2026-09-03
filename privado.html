@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Área privada — ImproXpresión</title>
+<meta name="description" content="Área interna de ImproXpresión: juegos y fichas para el equipo.">
+<!-- Zona interna: fuera de buscadores -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Raleway:wght@500;600;700&display=swap">
+<meta name="theme-color" content="#1668c1">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ---- Barrera de acceso (client-side, no es seguridad real) ---- */
+  .gate{position:fixed; inset:0; z-index:200; display:grid; place-items:center;
+        background:linear-gradient(160deg,var(--blue) 0%, var(--blue-dark) 100%); padding:20px}
+  .gate-card{background:#fff; border-radius:16px; padding:32px 28px; max-width:380px; width:100%;
+             box-shadow:0 20px 60px rgba(0,0,0,.35); text-align:center}
+  .gate-card .lock{font-size:40px; line-height:1}
+  .gate-card h1{font-size:22px; margin:12px 0 4px; color:var(--ink)}
+  .gate-card p{color:#666; font-size:14px; margin:0 0 20px}
+  .gate-card input{width:100%; box-sizing:border-box; padding:12px 14px; border:2px solid #ddd;
+                   border-radius:10px; font-size:16px; font-family:inherit; margin-bottom:12px}
+  .gate-card input:focus{outline:none; border-color:var(--blue)}
+  .gate-card button{width:100%; padding:12px; border:0; border-radius:10px; background:var(--orange);
+                    color:#fff; font-weight:800; font-size:16px; cursor:pointer; font-family:inherit}
+  .gate-card button:hover{background:var(--orange-dark)}
+  .gate-err{color:var(--orange-dark); font-size:14px; font-weight:600; min-height:20px; margin:4px 0 0}
+  .gate-back{display:inline-block; margin-top:16px; color:#fff; font-size:13px; text-decoration:none; opacity:.9}
+  .gate-back:hover{text-decoration:underline}
+  /* Contenido oculto hasta desbloquear */
+  .locked #privContent{display:none}
+  /* Rejilla de tarjetas para juegos / fichas */
+  .priv-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; margin-top:8px}
+  .priv-card{background:var(--paper-2); border:1px solid #e7e2da; border-radius:14px; padding:18px 20px}
+  .priv-card h3{font-size:18px; margin-bottom:6px}
+  .priv-card p{margin:0; color:#555; font-size:14px}
+  .priv-note{background:#fff8ec; border:1px solid #f3d9a8; border-radius:12px; padding:14px 16px; color:#7a5a1e; font-size:14px}
+</style>
+</head>
+<body class="locked">
+
+<!-- ===== BARRERA DE CONTRASEÑA ===== -->
+<div class="gate" id="gate">
+  <div>
+    <div class="gate-card">
+      <div class="lock">🔒</div>
+      <h1>Área privada</h1>
+      <p>Contenido interno del equipo. Introduce la contraseña.</p>
+      <form id="gateForm" autocomplete="off">
+        <input type="text" id="gateUser" placeholder="Usuario" aria-label="Usuario" autocapitalize="off" autocorrect="off" spellcheck="false" autofocus>
+        <input type="password" id="gatePass" placeholder="Contraseña" aria-label="Contraseña">
+        <button type="submit">Entrar</button>
+        <p class="gate-err" id="gateErr" role="alert"></p>
+      </form>
+    </div>
+    <div style="text-align:center"><a class="gate-back" href="index.html">← Volver a la web</a></div>
+  </div>
+</div>
+
+<!-- ===== CONTENIDO PRIVADO ===== -->
+<div id="privContent">
+  <div class="topbar"><div class="topbar-inner">
+    <div class="topbar-links">
+      <a href="index.html">← Volver a la web pública</a>
+    </div>
+    <div class="topbar-links">
+      <a href="#" id="lockBtn">🔒 Bloquear</a>
+    </div>
+  </div></div>
+
+  <header class="header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="ImproXpresión"><img class="brand-logo" src="assets/logo-blanco.png" alt="ImproXpresión"></a>
+    <nav class="nav" aria-label="Interna">
+      <a href="#juegos">Juegos</a>
+      <a href="#fichas">Fichas</a>
+    </nav>
+  </div></header>
+
+  <main>
+    <section class="page-hero">
+      <span class="eyebrow">Área interna</span>
+      <h1>Juegos y fichas del equipo</h1>
+      <span class="badge-pill">Zona privada · Solo equipo</span>
+    </section>
+
+    <div class="content">
+      <p class="priv-note">Estructura lista. Aquí irá vuestro contenido real de juegos y fichas — pásamelo y lo maqueto con este mismo estilo.</p>
+
+      <section class="content-sec" id="juegos">
+        <h2>🎲 Juegos</h2>
+        <p>Catálogo interno de juegos de improvisación.</p>
+        <div class="priv-grid">
+          <article class="priv-card"><h3>Nombre del juego</h3><p>Descripción, número de jugadores y cómo se juega.</p></article>
+          <article class="priv-card"><h3>Nombre del juego</h3><p>Descripción, número de jugadores y cómo se juega.</p></article>
+          <article class="priv-card"><h3>Nombre del juego</h3><p>Descripción, número de jugadores y cómo se juega.</p></article>
+        </div>
+      </section>
+
+      <section class="content-sec" id="fichas">
+        <h2>🃏 Fichas</h2>
+        <p>Fichas del equipo.</p>
+        <div class="priv-grid">
+          <article class="priv-card"><h3>Ficha</h3><p>Contenido de la ficha.</p></article>
+          <article class="priv-card"><h3>Ficha</h3><p>Contenido de la ficha.</p></article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    © 2026 ImproXpresión · Área interna · <a href="index.html">Inicio</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // Hash SHA-256 de "usuario:contraseña". NO es seguridad real: solo frena al
+  // curioso, ya que todo se ejecuta en el navegador. Para cambiar las credenciales,
+  // genera el nuevo hash de "usuario:contraseña" y sustitúyelo aquí.
+  // Credenciales actuales -> usuario: impro   contraseña: randomBurger
+  var CRED_HASH = "ef1d83b12c55541f9eb260358370ece253e8cbb779847edf97c835c4d31cdad2";
+  var KEY = "improx_priv_ok";
+  var body = document.body, gate = document.getElementById("gate");
+
+  function unlock(){ body.classList.remove("locked"); gate.style.display = "none"; }
+
+  async function sha256(str){
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0");}).join("");
+  }
+
+  // Recordar durante la sesión (hasta cerrar la pestaña)
+  try { if (sessionStorage.getItem(KEY) === "1") unlock(); } catch(e){}
+
+  document.getElementById("gateForm").addEventListener("submit", async function(ev){
+    ev.preventDefault();
+    var err = document.getElementById("gateErr");
+    var user = document.getElementById("gateUser").value.trim();
+    var pass = document.getElementById("gatePass").value;
+    var ok = false;
+    try { ok = (await sha256(user + ":" + pass)) === CRED_HASH; } catch(e){ ok = false; }
+    if (ok){
+      try { sessionStorage.setItem(KEY, "1"); } catch(e){}
+      unlock();
+    } else {
+      err.textContent = "Usuario o contraseña incorrectos";
+      document.getElementById("gatePass").value = "";
+    }
+  });
+
+  document.getElementById("lockBtn").addEventListener("click", function(ev){
+    ev.preventDefault();
+    try { sessionStorage.removeItem(KEY); } catch(e){}
+    location.reload();
+  });
+})();
+</script>
+</body></html>
