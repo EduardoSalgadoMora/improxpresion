@@ -424,3 +424,24 @@ img{max-width:100%; display:block}
   #cookieBanner .ck-btns{width:100%}
   #cookieBanner .ck-btns .btn{flex:1}
 }
+
+/* ===== Entornos (teatro de calle / en salas) ===== */
+.env-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:38px}
+.env-card{position:relative; border-radius:20px; overflow:hidden; box-shadow:var(--shadow); background:#0d0d0d; min-height:340px; display:flex}
+.env-card img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .5s ease}
+.env-card:hover img{transform:scale(1.05)}
+.env-card::after{content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(10,12,20,0) 30%, rgba(10,12,20,.55) 62%, rgba(8,10,16,.9) 100%)}
+.env-card.ph{background:linear-gradient(120deg,#2a3f6e,#141821)}
+.env-card.ph::after{opacity:.35}
+.env-card.ph::before{content:attr(data-ph); position:absolute; inset:0; z-index:3; display:grid; place-content:center; text-align:center;
+  color:rgba(255,255,255,.75); font-weight:700; font-size:.92rem; letter-spacing:.03em; padding:20px}
+.env-body{position:relative; z-index:2; margin-top:auto; padding:26px 26px 24px; color:#fff}
+.env-kicker{display:inline-block; background:var(--orange); color:#fff; font-weight:800; font-size:.68rem;
+  letter-spacing:.12em; text-transform:uppercase; padding:.4em .8em; border-radius:999px; margin-bottom:12px}
+.env-body h3{font-size:clamp(1.4rem,2.6vw,1.9rem); margin:0 0 8px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.env-body p{color:#e9edf5; font-size:.98rem; line-height:1.55; margin:0; max-width:46ch; text-shadow:0 1px 8px rgba(0,0,0,.35)}
+@media (max-width:760px){
+  .env-grid{grid-template-columns:1fr; gap:18px}
+  .env-card{min-height:280px}
+}

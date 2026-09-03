@@ -24,3 +24,7 @@ Mientras falte un archivo, se ve un hueco marcado (no rompe nada).
 ---
 **¿Tus archivos se llaman distinto?** No los renombres: déjamelos aquí como estén
 y dime la lista de nombres; yo ajusto el código para que apunte a los tuyos.
+
+## Entornos (home · "Nos adaptamos a cualquier entorno")
+- `entorno-calle.jpg` — foto actuando en teatro de calle (apaisada, ~1200×800)
+- `entorno-sala.jpg` — foto actuando en sala/teatro (apaisada, ~1200×800)
