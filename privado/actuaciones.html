@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Actuaciones · ImproXpresión</title>
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/auth.js"></script>
+<style>
+.form-actuacion{background:var(--panel);border:1px solid var(--borde);border-radius:var(--radio);padding:18px 20px;box-shadow:var(--sombra);max-width:1000px;margin:18px auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px}
+.form-actuacion .ancho{grid-column:1/-1}
+.form-actuacion label{font-size:.78rem;font-weight:700;color:var(--tinta2);display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px}
+.form-actuacion input,.form-actuacion textarea{width:100%;padding:9px 11px;border:1px solid var(--borde);border-radius:8px;font-family:inherit;font-size:.95rem}
+.form-actuacion textarea{min-height:56px;resize:vertical}
+.form-actuacion .acciones-form{grid-column:1/-1;display:flex;gap:10px;justify-content:flex-end}
+.lista-actuaciones{max-width:1000px;margin:0 auto 40px;padding:0 16px;display:flex;flex-direction:column;gap:12px}
+.actuacion{background:var(--panel);border:1px solid var(--borde);border-radius:var(--radio);padding:14px 18px;box-shadow:var(--sombra);display:flex;gap:16px;align-items:flex-start}
+.actuacion.pasada{opacity:.55}
+.fecha-badge{background:#3b7dbf;color:#fff;border-radius:10px;padding:8px 12px;text-align:center;min-width:74px}
+.fecha-badge .dia{font-size:1.5rem;font-weight:700;line-height:1}
+.fecha-badge .mes{font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
+.fecha-badge .anio{font-size:.7rem;opacity:.8}
+.actuacion .cuerpo{flex:1}
+.actuacion h3{margin:0 0 4px;font-size:1.08rem}
+.actuacion .detalles{font-size:.86rem;color:var(--tinta2);margin:0 0 4px}
+.actuacion .notas{font-size:.85rem;margin:6px 0 0;white-space:pre-wrap}
+.actuacion .botones{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.btn-google{background:#fff;border:1px solid #3b7dbf;color:#3b7dbf}
+.btn-google:hover{background:#eaf2fa}
+.separador-lista{max-width:1000px;margin:26px auto 4px;padding:0 16px;font-size:.85rem;text-transform:uppercase;letter-spacing:1.2px;color:#f5991e;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="index.html">
+    <img src="img/logo.png" onerror="this.onerror=null;this.src='img/logo.svg'" alt="ImproXpresión">
+    <span class="brand-txt"><span class="azul">IMPRO</span><span class="naranja">XPRESIÓN</span></span>
+  </a>
+  <span class="brand-sub">📅 Actuaciones</span>
+  <nav>
+    <a class="btn btn-secundario" href="index.html">🎭 Juegos</a>
+    <a class="btn btn-secundario" href="conceptos.html">📖 Conceptos</a>
+    <a class="btn btn-secundario" href="mapa.html">🗺️ Mapa</a>
+    <a class="btn btn-primario" href="ficha.html">📋 Crear ficha <span class="badge-carrito" id="badgeCarrito">0</span></a>
+  </nav>
+</header>
+
+<section class="form-actuacion">
+  <div class="ancho"><h2 style="margin:0;font-size:1.1rem" id="tituloForm">➕ Nueva actuación</h2></div>
+  <div class="ancho">
+    <label>Título *</label>
+    <input type="text" id="aTitulo" placeholder="Jam en Escenia / Muestra fin de curso / Match en Griñón...">
+  </div>
+  <div>
+    <label>Fecha *</label>
+    <input type="date" id="aFecha">
+  </div>
+  <div>
+    <label>Hora inicio *</label>
+    <input type="time" id="aHoraIni" value="19:00">
+  </div>
+  <div>
+    <label>Hora fin</label>
+    <input type="time" id="aHoraFin" value="21:00">
+  </div>
+  <div>
+    <label>Lugar</label>
+    <input type="text" id="aLugar" placeholder="Espacio Escenia, Griñón">
+  </div>
+  <div class="ancho">
+    <label>Notas</label>
+    <textarea id="aNotas" placeholder="Formato, quién actúa, material que llevar, hora de llegada..."></textarea>
+  </div>
+  <div class="acciones-form">
+    <button class="btn btn-secundario" id="btnCancelarEdicion" style="display:none">Cancelar</button>
+    <button class="btn btn-primario" id="btnGuardarActuacion">💾 Guardar actuación</button>
+  </div>
+</section>
+
+<div class="separador-lista">Próximas actuaciones</div>
+<div class="lista-actuaciones" id="listaProximas"></div>
+
+<div class="separador-lista">Actuaciones pasadas</div>
+<div class="lista-actuaciones" id="listaPasadas"></div>
+
+<script src="data/juegos.js"></script>
+<script src="data/conceptos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/actuaciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Crear ficha · Libera tu arte</title>
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/auth.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="index.html">
+    <img src="img/logo.png" onerror="this.onerror=null;this.src='img/logo.svg'" alt="ImproXpresión">
+    <span class="brand-txt"><span class="azul">IMPRO</span><span class="naranja">XPRESIÓN</span></span>
+  </a>
+  <span class="brand-sub">📋 Crear ficha</span>
+  <nav>
+    <a class="btn btn-secundario" href="conceptos.html">📖 Conceptos</a>
+    <a class="btn btn-secundario" href="actuaciones.html">📅 Actuaciones</a>
+    <a class="btn btn-secundario" href="mapa.html">🗺️ Mapa</a>
+    <a class="btn btn-secundario" href="index.html">🎭 Volver al buscador <span class="badge-carrito" id="badgeCarrito">0</span></a>
+  </nav>
+</header>
+
+<div class="contenedor">
+
+  <section class="meta-ficha">
+    <div>
+      <label>Título de la ficha</label>
+      <input type="text" id="fTitulo" placeholder="Ficha Jamming / Intensivo Escenia / Clase niños...">
+    </div>
+    <div>
+      <label>Fecha</label>
+      <input type="date" id="fFecha">
+    </div>
+    <div>
+      <label>Grupo</label>
+      <input type="text" id="fGrupo" placeholder="Adultos x6, niños...">
+    </div>
+  </section>
+
+  <div id="listaFicha" class="lista-ficha"></div>
+
+  <div class="vacio-ficha" id="vacio" style="display:none">
+    <h3>La ficha está vacía</h3>
+    <p>Ve al <a href="index.html">buscador</a> y añade juegos con el botón <strong>+ Ficha</strong>.</p>
+  </div>
+
+  <div class="resumen-tiempo">
+    <span class="total" id="totalMin">0 min</span>
+    <span class="aviso" id="avisoMin"></span>
+    <div class="acciones">
+      <button class="btn btn-secundario" id="btnGuardarFicha">💾 Guardar</button>
+      <button class="btn btn-secundario" id="btnExportarMd">⬇ Descargar .md</button>
+      <button class="btn btn-primario" id="btnImprimir">🖨 Imprimir / PDF</button>
+      <button class="btn btn-rojo" id="btnVaciar">🗑 Vaciar</button>
+    </div>
+  </div>
+
+  <section class="fichas-guardadas no-print">
+    <h2>📚 Fichas guardadas</h2>
+    <div id="listaGuardadas"></div>
+  </section>
+
+</div>
+
+<script src="data/juegos.js"></script>
+<script src="data/conceptos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/ficha.js"></script>
+</body>
+</html>
