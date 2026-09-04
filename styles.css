@@ -339,6 +339,13 @@ img{max-width:100%; display:block}
 .hist-photos img{height:clamp(250px,36vw,440px); width:auto; max-width:100%; border-radius:14px;
   box-shadow:var(--shadow); object-fit:cover; background:var(--paper-2)}
 .hist-carteles img{height:clamp(300px,42vw,540px)}
+/* Capítulo con dos retratos juntos arriba y la foto grande debajo */
+.hist-photos--stack{flex-direction:column; align-items:center}
+.hist-duo{display:flex; gap:18px; justify-content:center; align-items:flex-end; flex-wrap:wrap}
+.hist-duo img{height:clamp(220px,30vw,360px); width:auto; max-width:100%; border-radius:14px;
+  box-shadow:var(--shadow); object-fit:cover; background:var(--paper-2)}
+.hist-photos--stack .hist-big{height:auto; width:min(760px,100%); max-width:100%; border-radius:14px;
+  box-shadow:var(--shadow); object-fit:cover; background:var(--paper-2)}
 .hist-cap{text-align:center; color:var(--muted); font-size:1.05rem; font-style:italic; margin:16px auto 0; max-width:720px}
 
 /* Bandas de color alternas (blanco · azul · blanco · naranja …) */
