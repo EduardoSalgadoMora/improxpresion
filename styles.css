@@ -209,7 +209,16 @@ img{max-width:100%; display:block}
 .taller-intro{text-align:center; padding:34px 0 6px}
 .taller-intro h2{color:var(--blue); font-size:clamp(22px,3.4vw,30px); margin:6px 0 10px}
 .taller-intro p{color:var(--muted); max-width:60ch; margin:0 auto}
-.taller-opt{position:relative; background:var(--paper-2); border:1px solid var(--line);
+.taller-nav{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:26px 0 6px}
+.taller-nav a{display:flex; flex-direction:column; justify-content:center; gap:5px; text-align:center;
+  background:var(--accent,var(--blue)); color:#fff; border-radius:14px; padding:18px 14px;
+  box-shadow:var(--shadow); transition:transform .15s ease, filter .2s ease}
+.taller-nav a:hover{transform:translateY(-3px); filter:brightness(1.07)}
+.taller-nav .tn-sub{font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; opacity:.85}
+.taller-nav .tn-title{font-size:1.02rem; font-weight:800; line-height:1.15}
+@media(max-width:720px){.taller-nav{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.taller-nav{grid-template-columns:1fr}}
+.taller-opt{position:relative; scroll-margin-top:90px; background:var(--paper-2); border:1px solid var(--line);
   border-top:6px solid var(--accent,var(--blue)); border-radius:16px;
   padding:34px 32px; margin:22px 0 0; box-shadow:var(--shadow)}
 .taller-opt .eyebrow{color:var(--accent,var(--teal))}
