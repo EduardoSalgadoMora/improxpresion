@@ -477,3 +477,31 @@ img{max-width:100%; display:block}
   .env-grid{grid-template-columns:1fr; gap:18px}
   .env-card{min-height:280px}
 }
+
+/* ===== Noticias ===== */
+.news-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:38px}
+.news-card{display:flex; gap:20px; align-items:center; background:var(--paper); border:1px solid var(--line);
+  border-radius:18px; padding:22px 24px; box-shadow:var(--shadow); transition:transform .18s ease}
+.news-card:hover{transform:translateY(-3px)}
+.news-logo{flex:0 0 96px; width:96px; height:96px; display:grid; place-content:center;
+  background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px}
+.news-logo img{max-width:100%; max-height:100%; object-fit:contain}
+.news-tag{display:inline-block; background:var(--teal); color:#fff; font-size:.68rem; font-weight:700;
+  letter-spacing:.08em; text-transform:uppercase; padding:.35em .7em; border-radius:999px; margin-bottom:8px}
+.news-body h3{color:var(--blue); font-size:1.18rem; margin:0 0 6px; line-height:1.2}
+.news-body p{color:#555; line-height:1.6; margin:0}
+@media (max-width:720px){ .news-grid{grid-template-columns:1fr} }
+@media (max-width:480px){ .news-card{flex-direction:column; text-align:center} .news-logo{flex-basis:auto} }
+
+/* ===== Gente que ha confiado en nosotros ===== */
+.trust{background:var(--paper-2)}
+.confia-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-top:38px}
+.confia-cell{height:120px; display:flex; align-items:center; justify-content:center; overflow:hidden;
+  background:#fff; border:1px solid var(--line);
+  border-radius:14px; padding:18px; box-shadow:0 8px 22px -18px rgba(0,0,0,.4)}
+.confia-cell img{max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;
+  filter:grayscale(1); opacity:.62; transition:filter .3s ease, opacity .3s ease, transform .3s ease}
+.confia-cell:hover img{filter:grayscale(0); opacity:1; transform:scale(1.06)}
+@media (hover:none){ .confia-cell img{filter:none; opacity:1} }
+@media (max-width:900px){ .confia-grid{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:520px){ .confia-grid{grid-template-columns:repeat(2,1fr)} .confia-cell{height:100px} }
