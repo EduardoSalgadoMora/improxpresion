@@ -205,6 +205,17 @@ img{max-width:100%; display:block}
 .taller-img{margin:8px auto 0; max-width:820px; border-radius:14px; overflow:hidden; box-shadow:var(--shadow)}
 .taller-img img{width:100%; height:auto; display:block}
 
+/* Talleres — cada propuesta como tarjeta diferenciada */
+.taller-intro{text-align:center; padding:34px 0 6px}
+.taller-intro h2{color:var(--blue); font-size:clamp(22px,3.4vw,30px); margin:6px 0 10px}
+.taller-intro p{color:var(--muted); max-width:60ch; margin:0 auto}
+.taller-opt{position:relative; background:var(--paper-2); border:1px solid var(--line);
+  border-top:6px solid var(--accent,var(--blue)); border-radius:16px;
+  padding:34px 32px; margin:22px 0 0; box-shadow:var(--shadow)}
+.taller-opt .eyebrow{color:var(--accent,var(--teal))}
+.taller-opt .taller-img{box-shadow:none; border:1px solid var(--line)}
+@media(max-width:600px){.taller-opt{padding:26px 20px}}
+
 /* ===== Menú desplegable (Espectáculos) ===== */
 .nav-item{position:relative; display:flex; align-items:center}
 .drop-toggle{color:#fff; font-family:"Raleway","Poppins",sans-serif; text-transform:uppercase; font-weight:600; font-size:.9rem; letter-spacing:1.2px; cursor:pointer; display:inline-flex; align-items:center; gap:.4em; background:none; border:0}
