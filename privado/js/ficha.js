@@ -29,10 +29,9 @@
       if(!j){ return; }
       const div = document.createElement('div');
       div.className = 'item-ficha';
-      div.draggable = true;
       div.dataset.idx = idx;
       div.innerHTML = `
-        <div class="item-num">${idx+1}</div>
+        <div class="item-num" draggable="true" title="Arrastra para reordenar">${idx+1}</div>
         <div class="item-cuerpo">
           <h3>${LTA.esConcepto(j.id)?'📖 ':''}${j.t} <span class="cat-tag">${LTA.esConcepto(j.id)?'Concepto teórico':((j.c||[])[0]||'')}</span></h3>
           <p class="desc">${j.d}</p>
@@ -85,6 +84,7 @@
   lista.addEventListener('dragstart', e => {
     const it = e.target.closest('.item-ficha'); if(!it) return;
     dragIdx = +it.dataset.idx; it.classList.add('arrastrando');
+    if(e.dataTransfer) e.dataTransfer.setDragImage(it, 20, 20);
   });
   lista.addEventListener('dragend', e => {
     const it = e.target.closest('.item-ficha'); if(it) it.classList.remove('arrastrando');
