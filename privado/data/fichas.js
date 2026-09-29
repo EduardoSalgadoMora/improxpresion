@@ -40,5 +40,14 @@ const FICHAS_BASE_MENUDOS = [
   {id:"accion-exagerada-simple",min:10,nota:""},
   {id:"ranita",min:5,nota:""},
   {id:"cierre-lo-mejor-de-hoy",min:10,nota:"Reencuentro tras el verano: dar un poco más de tiempo para que cuenten qué tal las vacaciones."}
+]},
+{titulo:"Personajes con secreto (previa del Cluedo)",fecha:"2026-09-29",grupo:"Menudos Artistas (6 peques)",items:[
+  {id:"guino-ladron",min:10,nota:"3-4 rondas."},
+  {id:"caminar-misterioso",min:10,nota:""},
+  {id:"tres-ingredientes-personaje",min:15,nota:"Es el mismo esquema que usarán en el Cluedo."},
+  {id:"objeto-escondido",min:10,nota:""},
+  {id:"sospechoso-silla",min:20,nota:"Ejercicio central, ensayo del interrogatorio. Fíjate en quién disfruta mintiendo: será el culpable del Cluedo."},
+  {id:"memoria-3-cambios",min:10,nota:"Versión 'fotografía del otro': por parejas se observan 30'', se dan la espalda, cada uno cambia 3 cosas de su aspecto y el otro las descubre. Ojo de detective."},
+  {id:"cierre-sobre-misterio",min:5,nota:""}
 ]}
 ];

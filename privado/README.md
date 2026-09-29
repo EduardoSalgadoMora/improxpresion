@@ -37,7 +37,7 @@ web_juegos_impro/   (en el repo de la web: carpeta privado/)
 │   └── ficha-menudos.js   → lógica del creador de fichas — Menudos Artistas
 └── data/
     ├── juegos.js          → base de datos de ImproXpresión (582 juegos)
-    ├── juegos_menudos.js  → base de datos de Menudos Artistas (170 juegos)
+    ├── juegos_menudos.js  → base de datos de Menudos Artistas (176 juegos)
     ├── fichas.js          → fichas de clase predefinidas (FICHAS_BASE y FICHAS_BASE_MENUDOS)
     ├── sagra.js           → datos del mapa de La Sagra
     └── conceptos.js       → glosario (96 conceptos, solo ImproXpresión)
@@ -74,11 +74,11 @@ web_juegos_impro/   (en el repo de la web: carpeta privado/)
 - **Guardar**: archiva la ficha (recuperable desde "Fichas guardadas").
 - **Descargar .md**: exporta la ficha en Markdown.
 - **Imprimir / PDF**: resumen a una cara (título + ~3 líneas por juego) listo para llevar a clase.
-- **🎭 Fichas de clase**: fichas predefinidas en `data/fichas.js` (Jamming 28/09/2026, Intensivo Escenia Griñón Día 2 PROL; y en Menudos, la clase de reencuentro de Ugena). Botón **Cargar** para abrirlas.
+- **🎭 Fichas de clase**: fichas predefinidas en `data/fichas.js` (Jamming 28/09/2026, Intensivo Escenia Griñón Día 2 PROL; y en Menudos, la clase de reencuentro de Ugena y "Personajes con secreto"). Botón **Cargar** para abrirlas.
 - Para reordenar se arrastra desde el **número** del bloque; así el resto del texto se puede seleccionar y copiar.
 
 ## Dónde se guardan tus datos
-- La base de 582 juegos de ImproXpresión, los 170 de Menudos Artistas y los 96 conceptos viven en `data/juegos.js`, `data/juegos_menudos.js` y `data/conceptos.js` (archivos del disco).
+- La base de 582 juegos de ImproXpresión, los 176 de Menudos Artistas y los 96 conceptos viven en `data/juegos.js`, `data/juegos_menudos.js` y `data/conceptos.js` (archivos del disco).
 - **Todo lo demás vive en el `localStorage` del navegador**, por separado en cada apartado: juegos que creas, ediciones de juegos existentes, favoritos, la ficha en curso y las fichas guardadas. Si cambias de navegador o borras los datos de navegación, se pierde.
 - Por eso existe el botón **⬇ Copia de seguridad** (en cada buscador): descarga un JSON con todos tus datos de ese apartado. Con **⬆ Restaurar copia** los recuperas en cualquier navegador u ordenador.
 - Si quieres consolidar tus juegos/ediciones en la base permanente, pásale la copia de seguridad a Claude y que los integre en `data/juegos.js` o `data/juegos_menudos.js` según toque.
