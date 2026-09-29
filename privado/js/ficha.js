@@ -155,6 +155,33 @@
       cont.appendChild(div);
     });
   }
+  // fichas de clase predefinidas (data/fichas.js)
+  function pintarBase(){
+    const base = (typeof FICHAS_BASE !== 'undefined') ? FICHAS_BASE : [];
+    const cont = $('#listaBase');
+    if(!cont) return;
+    cont.innerHTML = base.length ? '' : '<p style="color:#6b6478;font-size:.9rem">No hay fichas de clase.</p>';
+    base.forEach((f,i) => {
+      const min = f.items.reduce((s,x)=>s+(x.min||0),0);
+      const div = document.createElement('div');
+      div.className = 'ficha-guardada';
+      div.innerHTML = `
+        <span class="nombre">${f.titulo}</span>
+        <span class="datos">${f.grupo || ''} · ${f.items.length} juegos · ${min}'</span>
+        <button class="btn btn-secundario btn-mini" data-carga-base="${i}">Cargar</button>`;
+      cont.appendChild(div);
+    });
+  }
+  const listaBase = $('#listaBase');
+  if(listaBase) listaBase.addEventListener('click', e => {
+    const carga = e.target.closest('[data-carga-base]'); if(!carga) return;
+    if(ficha.items.length && !confirm('Se sustituirá la ficha actual. ¿Continuar?')) return;
+    ficha = JSON.parse(JSON.stringify(FICHAS_BASE[+carga.dataset.cargaBase]));
+    LTA.guardarCarrito(ficha);
+    $('#fTitulo').value = ficha.titulo||''; $('#fFecha').value = ficha.fecha||''; $('#fGrupo').value = ficha.grupo||'';
+    pintar();
+  });
+
   $('#btnGuardarFicha').onclick = () => {
     if(!ficha.items.length){ alert('La ficha está vacía.'); return; }
     if(!ficha.titulo){ ficha.titulo = prompt('Título de la ficha:','Ficha ' + new Date().toLocaleDateString('es-ES')) || 'Ficha'; $('#fTitulo').value = ficha.titulo; }
@@ -187,5 +214,6 @@
   });
 
   pintar();
+  pintarBase();
   pintarGuardadas();
 })();
