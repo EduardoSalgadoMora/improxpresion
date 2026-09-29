@@ -4,37 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>Libera tu arte · Juegos de Teatro e Impro</title>
+<title>Menudos Artistas · Juegos de teatro infantil</title>
 <link rel="stylesheet" href="css/estilos.css">
 <script src="js/auth.js"></script>
+<style>
+  /* Paleta propia de Menudos Artistas (no toca las variables de ImproXpresión) */
+  body.menudos{--acento:#d6336c;--acento2:#f5991e}
+  body.menudos .btn-secundario:hover{background:#fdeef2}
+  body.menudos .chip.activa{background:#d6336c;border-color:#d6336c}
+  body.menudos .cat-tag{background:#fbe4ec;color:#9d174d}
+  body.menudos .cat-tag.origen-impro{background:#dbeafe;color:#1e3a8a}
+  body.menudos .tarjeta.de-impro{border-left:3px solid #1e3a8a}
+</style>
 </head>
-<body>
+<body class="menudos">
 
 <header class="top">
-  <a class="brand" href="index.html">
-    <img src="img/logo-improxpresion.png" onerror="this.onerror=null;this.src='img/logo.svg'" alt="ImproXpresión">
-    <span class="brand-txt"><span class="azul">IMPRO</span><span class="naranja">XPRESIÓN</span></span>
+  <a class="brand" href="menudos.html">
+    <img src="img/logo-menudos.png" onerror="this.style.display='none'" alt="Menudos Artistas">
+    <span class="brand-txt" style="font-family:'Segoe UI',sans-serif;font-size:1.5rem;letter-spacing:0"><span style="color:#d6336c">MENUDOS</span> <span style="color:#f5991e">ARTISTAS</span></span>
   </a>
+  <span class="brand-sub">🧒 Teatro Ugena infantil</span>
   <nav>
-    <a class="btn btn-secundario" href="menudos.html" title="Juegos de las clases infantiles de Menudos Artistas">🧒 Menudos Artistas</a>
     <button class="btn btn-secundario" id="btnCrearJuego">➕ Crear juego</button>
-    <a class="btn btn-secundario" href="conceptos.html">📖 Conceptos</a>
-    <a class="btn btn-secundario" href="actuaciones.html">📅 Actuaciones</a>
-    <a class="btn btn-secundario" href="mapa.html">🗺️ Mapa</a>
-    <a class="btn btn-primario" href="ficha.html">📋 Crear ficha <span class="badge-carrito" id="badgeCarrito">0</span></a>
+    <a class="btn btn-secundario" href="ficha-menudos.html">📋 Crear ficha <span class="badge-carrito" id="badgeCarrito">0</span></a>
+    <a class="btn btn-secundario" href="index.html" title="Ir al buscador de ImproXpresión">🎭 ImproXpresión</a>
   </nav>
 </header>
 
 <section class="panel-busqueda">
   <div class="fila-busqueda">
-    <input type="search" id="txtBuscar" placeholder="Buscar por título, descripción, variantes... (ej: estatus, mímica, palmada)">
+    <input type="search" id="txtBuscar" placeholder="Buscar por título, descripción, variantes... (ej: calentamiento, personaje, cuento)">
     <select id="selAutor"><option value="">Todos los autores</option></select>
-    <select id="selEdad">
-      <option value="">Todas las edades</option>
-      <option value="ninos">Niños</option>
-      <option value="adultos">Adultos</option>
-      <option value="ambos">Ambos</option>
-    </select>
     <select id="selOrden">
       <option value="alfa">A → Z</option>
       <option value="cat">Por categoría</option>
@@ -46,6 +47,7 @@
     <label><input type="checkbox" id="chkFavs"> ⭐ Solo favoritos</label>
     <label><input type="checkbox" id="chkPropios"> 🟢 Nuevos o editados por mí</label>
     <label><input type="checkbox" id="chkVariantes"> 🔀 Con variantes</label>
+    <label title="Incluye también los juegos de la base de ImproXpresión (sin mezclarlos con tu base de Menudos Artistas)"><input type="checkbox" id="chkImpro"> 🎭 Incluir ImproXpresión</label>
     <button class="btn btn-secundario btn-mini" id="btnReset">↺ Reset</button>
     <button class="btn btn-secundario btn-mini" id="btnBackup" title="Descarga un JSON con tus juegos nuevos, ediciones, favoritos y fichas">⬇ Copia de seguridad</button>
     <button class="btn btn-secundario btn-mini" id="btnRestaurarBackup" title="Recupera una copia de seguridad">⬆ Restaurar copia</button>
@@ -91,8 +93,8 @@
     <textarea id="cjVar" style="min-height:50px"></textarea>
     <label>Edad</label>
     <select id="cjEdad">
-      <option value="ambos">Ambos</option>
       <option value="ninos">Niños</option>
+      <option value="ambos">Ambos</option>
       <option value="adultos">Adultos</option>
     </select>
     <label>Autor / fuente</label>
@@ -105,8 +107,8 @@
 </div>
 
 <script src="data/juegos.js"></script>
-<script src="data/conceptos.js"></script>
-<script src="js/comun.js"></script>
-<script src="js/app.js"></script>
+<script src="data/juegos_menudos.js"></script>
+<script src="js/comun-menudos.js"></script>
+<script src="js/app-menudos.js"></script>
 </body>
 </html>

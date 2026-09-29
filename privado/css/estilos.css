@@ -113,13 +113,37 @@ header.top nav{margin-left:auto;display:flex;gap:10px;align-items:center;flex-wr
 .ficha-guardada .nombre{font-weight:600;flex:1}
 .ficha-guardada .datos{font-size:.8rem;color:var(--tinta2)}
 
-/* ===== Impresión ===== */
+/* ===== Impresión: resumen a 1 cara (título + ~3 líneas por juego) ===== */
 @media print{
   header.top,.meta-ficha .no-print,.item-controles .flechas,.item-controles .btn,.resumen-tiempo .acciones,.fichas-guardadas,.btn,.no-print{display:none !important}
-  body{background:#fff}
-  .item-ficha,.meta-ficha{box-shadow:none;border-color:#bbb;break-inside:avoid}
-  .resumen-tiempo{background:none;color:#000;border-top:2px solid #000;border-radius:0}
-  .item-cuerpo textarea{border:none;background:none;padding:0}
+  @page{margin:10mm}
+  body{background:#fff;font-size:9.5px}
+  .contenedor{max-width:100%;margin:0;padding:0}
+
+  .meta-ficha{padding:3px 8px;gap:10px;margin-bottom:4px;box-shadow:none;border-color:#bbb;grid-template-columns:2fr 1fr 1fr;align-items:baseline}
+  .meta-ficha > div{display:flex;align-items:baseline;gap:4px;white-space:nowrap;overflow:hidden}
+  .meta-ficha label{font-size:.56rem;margin:0;flex:none}
+  .meta-ficha input,.meta-ficha select{padding:0;font-size:.78rem;border:none;border-bottom:1px solid #999;border-radius:0;height:auto}
+
+  .lista-ficha{gap:2px;margin-top:0}
+  .item-ficha{
+    box-shadow:none;border-color:#ccc;break-inside:avoid;page-break-inside:avoid;
+    padding:3px 7px;gap:7px;grid-template-columns:16px 1fr auto;align-items:start
+  }
+  .item-num{width:15px;height:15px;font-size:.62rem;border-radius:4px}
+  .item-cuerpo h3{font-size:.8rem;margin:0;line-height:1.1}
+  .item-cuerpo h3 .cat-tag{font-size:.58rem;padding:0 3px}
+  /* Descripción recortada a ~3 líneas; variantes y notas fuera del resumen */
+  .item-cuerpo .desc{font-size:.7rem;line-height:1.15;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .item-cuerpo .desc-variantes{display:none !important}
+  .item-cuerpo textarea{display:none !important}
+
+  .item-controles{gap:2px;align-items:flex-end}
+  .item-controles .minutos{width:34px;padding:0 2px;font-size:.7rem;border:1px solid #999;border-radius:3px}
+
+  .resumen-tiempo{background:none;color:#000;border-top:1.5px solid #000;border-radius:0;position:static;padding:3px 2px;margin-top:4px;gap:8px}
+  .resumen-tiempo .total{font-size:.85rem}
+  .resumen-tiempo .aviso{font-size:.66rem}
 }
 @media(max-width:720px){
   .meta-ficha{grid-template-columns:1fr}

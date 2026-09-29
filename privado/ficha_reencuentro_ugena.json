@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "fecha": "2026-09-15T09:31:19.432295Z",
+  "juegosPropios": [
+    {
+      "id": "presentacion-animal-humor",
+      "t": "Presentación con animal (cómo me siento)",
+      "d": "Ya se conocen de sobra, así que en vez de decir el nombre, cada uno dice cómo se siente hoy, después de las vacaciones, convertido en un animal: \"hoy soy un [animal], porque...\". Sirve de termómetro de grupo y de vuelta suave al ritual del círculo.",
+      "v": "Con gesto que el grupo repite después de cada uno.",
+      "c": [
+        "Creatividad",
+        "Desinhibición"
+      ],
+      "e": "niños",
+      "a": "Edu",
+      "src": "Juego propio"
+    },
+    {
+      "id": "cierre-lo-mejor-de-hoy",
+      "t": "Cierre: la ronda de \"lo mejor de hoy\"",
+      "d": "En círculo, cada uno dice en una frase corta qué es lo que más le ha gustado de la clase (o del verano). Ritual de despedida antes de que lleguen a buscarlos.",
+      "c": [
+        "Cierre"
+      ],
+      "e": "niños",
+      "a": "Edu",
+      "src": "Juego propio"
+    }
+  ],
+  "juegosEditados": {},
+  "favoritos": [],
+  "fichaActual": {
+    "titulo": "Clase de reencuentro — Grupo Ugena (curso 2026-2027)",
+    "fecha": "",
+    "grupo": "Ugena, grupo del curso pasado (7-10 peques)",
+    "items": [
+      {
+        "id": "presentacion-animal-humor",
+        "min": 5,
+        "nota": ""
+      },
+      {
+        "id": "balas-energia",
+        "min": 5,
+        "nota": ""
+      },
+      {
+        "id": "ruiditos",
+        "min": 5,
+        "nota": "Sustituye a \"Oh Palele\": mismo hueco de calentamiento vocal con movimiento por el espacio."
+      },
+      {
+        "id": "tra-tre-tri",
+        "min": 5,
+        "nota": ""
+      },
+      {
+        "id": "animales-cuerpo",
+        "min": 10,
+        "nota": ""
+      },
+      {
+        "id": "caminar-como-personajes",
+        "min": 10,
+        "nota": ""
+      },
+      {
+        "id": "foto-fija",
+        "min": 10,
+        "nota": ""
+      },
+      {
+        "id": "pintar-lugar",
+        "min": 15,
+        "nota": "Variante Playground: un parque donde todos juegan interactuando con lo creado."
+      },
+      {
+        "id": "accion-exagerada-simple",
+        "min": 10,
+        "nota": ""
+      },
+      {
+        "id": "ranita",
+        "min": 5,
+        "nota": ""
+      },
+      {
+        "id": "cierre-lo-mejor-de-hoy",
+        "min": 10,
+        "nota": "Reencuentro tras el verano: dar un poco más de tiempo para que cuenten qué tal las vacaciones."
+      }
+    ]
+  },
+  "fichasGuardadas": [
+    {
+      "titulo": "Clase de reencuentro — Grupo Ugena (curso 2026-2027)",
+      "fecha": "",
+      "grupo": "Ugena, grupo del curso pasado (7-10 peques)",
+      "items": [
+        {
+          "id": "presentacion-animal-humor",
+          "min": 5,
+          "nota": ""
+        },
+        {
+          "id": "balas-energia",
+          "min": 5,
+          "nota": ""
+        },
+        {
+          "id": "ruiditos",
+          "min": 5,
+          "nota": "Sustituye a \"Oh Palele\": mismo hueco de calentamiento vocal con movimiento por el espacio."
+        },
+        {
+          "id": "tra-tre-tri",
+          "min": 5,
+          "nota": ""
+        },
+        {
+          "id": "animales-cuerpo",
+          "min": 10,
+          "nota": ""
+        },
+        {
+          "id": "caminar-como-personajes",
+          "min": 10,
+          "nota": ""
+        },
+        {
+          "id": "foto-fija",
+          "min": 10,
+          "nota": ""
+        },
+        {
+          "id": "pintar-lugar",
+          "min": 15,
+          "nota": "Variante Playground: un parque donde todos juegan interactuando con lo creado."
+        },
+        {
+          "id": "accion-exagerada-simple",
+          "min": 10,
+          "nota": ""
+        },
+        {
+          "id": "ranita",
+          "min": 5,
+          "nota": ""
+        },
+        {
+          "id": "cierre-lo-mejor-de-hoy",
+          "min": 10,
+          "nota": "Reencuentro tras el verano: dar un poco más de tiempo para que cuenten qué tal las vacaciones."
+        }
+      ]
+    }
+  ]
+}

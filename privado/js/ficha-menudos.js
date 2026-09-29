@@ -1,8 +1,8 @@
-// Constructor de fichas - Libera tu arte
+// Constructor de fichas - Menudos Artistas
 (function(){
   const $ = s => document.querySelector(s);
   const lista = $('#listaFicha');
-  let ficha = LTA.carrito();
+  let ficha = MA.carrito();
 
   // meta
   $('#fTitulo').value = ficha.titulo || '';
@@ -13,7 +13,7 @@
       ficha.titulo = $('#fTitulo').value;
       ficha.fecha = $('#fFecha').value;
       ficha.grupo = $('#fGrupo').value;
-      LTA.guardarCarrito(ficha);
+      MA.guardarCarrito(ficha);
     });
   });
 
@@ -25,7 +25,7 @@
     lista.innerHTML = '';
     $('#vacio').style.display = ficha.items.length ? 'none' : '';
     ficha.items.forEach((item, idx) => {
-      const j = LTA.porId(item.id);
+      const j = MA.porId(item.id);
       if(!j){ return; }
       const div = document.createElement('div');
       div.className = 'item-ficha';
@@ -33,7 +33,7 @@
       div.innerHTML = `
         <div class="item-num" draggable="true" title="Arrastra para reordenar">${idx+1}</div>
         <div class="item-cuerpo">
-          <h3>${LTA.esConcepto(j.id)?'📖 ':''}${j.t} <span class="cat-tag">${LTA.esConcepto(j.id)?'Concepto teórico':((j.c||[])[0]||'')}</span></h3>
+          <h3>${j.t} <span class="cat-tag">${(j.c||[])[0]||''}</span>${j.origenImpro?' <span class="cat-tag origen-impro">🎭 ImproXpresión</span>':''}</h3>
           <p class="desc">${j.d}</p>
           ${j.v ? `<p class="desc desc-variantes"><em>Variantes: ${j.v}</em></p>` : ''}
           <textarea placeholder="Notas para esta sesión (consignas, adaptaciones al grupo...)" data-nota="${idx}">${item.nota||''}</textarea>
@@ -52,20 +52,20 @@
     $('#totalMin').textContent = t + ' min';
     const h = Math.floor(t/60), m = t%60;
     $('#avisoMin').textContent = t ? `(${h}h ${m}') · ${ficha.items.length} juegos` : '';
-    LTA.actualizarBadge();
+    MA.actualizarBadge();
   }
 
   lista.addEventListener('input', e => {
     if(e.target.dataset.min !== undefined){
       ficha.items[+e.target.dataset.min].min = parseInt(e.target.value)||0;
-      LTA.guardarCarrito(ficha);
+      MA.guardarCarrito(ficha);
       const t = total();
       $('#totalMin').textContent = t + ' min';
       $('#avisoMin').textContent = `(${Math.floor(t/60)}h ${t%60}') · ${ficha.items.length} juegos`;
     }
     if(e.target.dataset.nota !== undefined){
       ficha.items[+e.target.dataset.nota].nota = e.target.value;
-      LTA.guardarCarrito(ficha);
+      MA.guardarCarrito(ficha);
     }
   });
   lista.addEventListener('click', e => {
@@ -76,7 +76,7 @@
     else if(baja){ const i=+baja.dataset.baja; [ficha.items[i+1],ficha.items[i]]=[ficha.items[i],ficha.items[i+1]]; }
     else if(quita){ ficha.items.splice(+quita.dataset.quita,1); }
     else return;
-    LTA.guardarCarrito(ficha); pintar();
+    MA.guardarCarrito(ficha); pintar();
   });
 
   // drag & drop
@@ -97,7 +97,7 @@
     const [mov] = ficha.items.splice(dragIdx,1);
     ficha.items.splice(destino,0,mov);
     dragIdx = null;
-    LTA.guardarCarrito(ficha); pintar();
+    MA.guardarCarrito(ficha); pintar();
   });
 
   // exportar markdown
@@ -107,14 +107,13 @@
     if(ficha.fecha || ficha.grupo) md += `**${[ficha.fecha, ficha.grupo].filter(Boolean).join(' · ')}** — Total: ${t} min (${Math.floor(t/60)}h ${t%60}')\n`;
     md += '\n---\n';
     ficha.items.forEach((item,i) => {
-      const j = LTA.porId(item.id); if(!j) return;
-      const esConc = LTA.esConcepto(j.id);
-      md += `\n## ${i+1}. ${esConc?'📖 ':''}${j.t} (${item.min}')\n`;
-      md += `*${esConc?'Concepto teórico — ':''}${(j.c||[]).join(', ')}*\n\n${j.d}\n`;
-      if(j.v) md += `\n**${esConc?'Cómo aplicarlo':'Variantes'}:** ${j.v}\n`;
+      const j = MA.porId(item.id); if(!j) return;
+      md += `\n## ${i+1}. ${j.t}${j.origenImpro?' (ImproXpresión)':''} (${item.min}')\n`;
+      md += `*${(j.c||[]).join(', ')}*\n\n${j.d}\n`;
+      if(j.v) md += `\n**Variantes:** ${j.v}\n`;
       if(item.nota) md += `\n> 📝 ${item.nota}\n`;
     });
-    md += `\n---\n*Generada con Libera tu arte · ${new Date().toLocaleDateString('es-ES')}*\n`;
+    md += `\n---\n*Generada con Menudos Artistas · ${new Date().toLocaleDateString('es-ES')}*\n`;
     return md;
   }
   $('#btnExportarMd').onclick = () => {
@@ -122,7 +121,7 @@
     const blob = new Blob([generarMd()], {type:'text/markdown;charset=utf-8'});
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = (ficha.titulo ? LTA.slug(ficha.titulo) : 'ficha') + '.md';
+    a.download = (ficha.titulo ? MA.slug(ficha.titulo) : 'ficha') + '.md';
     a.click();
   };
   $('#btnImprimir').onclick = () => {
@@ -133,14 +132,14 @@
   $('#btnVaciar').onclick = () => {
     if(!confirm('¿Vaciar la ficha actual?')) return;
     ficha = {titulo:'', fecha:'', grupo:'', items:[]};
-    LTA.guardarCarrito(ficha);
+    MA.guardarCarrito(ficha);
     $('#fTitulo').value=''; $('#fFecha').value=''; $('#fGrupo').value='';
     pintar();
   };
 
   // fichas guardadas
   function pintarGuardadas(){
-    const guardadas = LTA.leer(LTA.KEY_FICHAS, []);
+    const guardadas = MA.leer(MA.KEY_FICHAS, []);
     const cont = $('#listaGuardadas');
     cont.innerHTML = guardadas.length ? '' : '<p style="color:#6b6478;font-size:.9rem">Aún no has guardado ninguna ficha.</p>';
     guardadas.forEach((f,i) => {
@@ -155,9 +154,40 @@
       cont.appendChild(div);
     });
   }
+  $('#btnGuardarFicha').onclick = () => {
+    if(!ficha.items.length){ alert('La ficha está vacía.'); return; }
+    if(!ficha.titulo){ ficha.titulo = prompt('Título de la ficha:','Ficha ' + new Date().toLocaleDateString('es-ES')) || 'Ficha'; $('#fTitulo').value = ficha.titulo; }
+    const guardadas = MA.leer(MA.KEY_FICHAS, []);
+    const idx = guardadas.findIndex(f => f.titulo === ficha.titulo);
+    const copia = JSON.parse(JSON.stringify(ficha));
+    if(idx >= 0){ if(confirm('Ya existe una ficha con ese título. ¿Sobreescribir?')) guardadas[idx] = copia; else return; }
+    else guardadas.push(copia);
+    MA.guardar(MA.KEY_FICHAS, guardadas);
+    MA.guardarCarrito(ficha);
+    pintarGuardadas();
+    alert('Ficha guardada ✔');
+  };
+  $('#listaGuardadas').addEventListener('click', e => {
+    const carga = e.target.closest('[data-carga]');
+    const borra = e.target.closest('[data-borra]');
+    const guardadas = MA.leer(MA.KEY_FICHAS, []);
+    if(carga){
+      ficha = JSON.parse(JSON.stringify(guardadas[+carga.dataset.carga]));
+      MA.guardarCarrito(ficha);
+      $('#fTitulo').value = ficha.titulo||''; $('#fFecha').value = ficha.fecha||''; $('#fGrupo').value = ficha.grupo||'';
+      pintar();
+    }
+    if(borra){
+      if(!confirm('¿Borrar esta ficha guardada?')) return;
+      guardadas.splice(+borra.dataset.borra,1);
+      MA.guardar(MA.KEY_FICHAS, guardadas);
+      pintarGuardadas();
+    }
+  });
+
   // fichas de clase predefinidas (data/fichas.js)
   function pintarBase(){
-    const base = (typeof FICHAS_BASE !== 'undefined') ? FICHAS_BASE : [];
+    const base = (typeof FICHAS_BASE_MENUDOS !== 'undefined') ? FICHAS_BASE_MENUDOS : [];
     const cont = $('#listaBase');
     if(!cont) return;
     cont.innerHTML = base.length ? '' : '<p style="color:#6b6478;font-size:.9rem">No hay fichas de clase.</p>';
@@ -176,44 +206,13 @@
   if(listaBase) listaBase.addEventListener('click', e => {
     const carga = e.target.closest('[data-carga-base]'); if(!carga) return;
     if(ficha.items.length && !confirm('Se sustituirá la ficha actual. ¿Continuar?')) return;
-    ficha = JSON.parse(JSON.stringify(FICHAS_BASE[+carga.dataset.cargaBase]));
-    LTA.guardarCarrito(ficha);
+    ficha = JSON.parse(JSON.stringify(FICHAS_BASE_MENUDOS[+carga.dataset.cargaBase]));
+    MA.guardarCarrito(ficha);
     $('#fTitulo').value = ficha.titulo||''; $('#fFecha').value = ficha.fecha||''; $('#fGrupo').value = ficha.grupo||'';
     pintar();
   });
 
-  $('#btnGuardarFicha').onclick = () => {
-    if(!ficha.items.length){ alert('La ficha está vacía.'); return; }
-    if(!ficha.titulo){ ficha.titulo = prompt('Título de la ficha:','Ficha ' + new Date().toLocaleDateString('es-ES')) || 'Ficha'; $('#fTitulo').value = ficha.titulo; }
-    const guardadas = LTA.leer(LTA.KEY_FICHAS, []);
-    const idx = guardadas.findIndex(f => f.titulo === ficha.titulo);
-    const copia = JSON.parse(JSON.stringify(ficha));
-    if(idx >= 0){ if(confirm('Ya existe una ficha con ese título. ¿Sobreescribir?')) guardadas[idx] = copia; else return; }
-    else guardadas.push(copia);
-    LTA.guardar(LTA.KEY_FICHAS, guardadas);
-    LTA.guardarCarrito(ficha);
-    pintarGuardadas();
-    alert('Ficha guardada ✔');
-  };
-  $('#listaGuardadas').addEventListener('click', e => {
-    const carga = e.target.closest('[data-carga]');
-    const borra = e.target.closest('[data-borra]');
-    const guardadas = LTA.leer(LTA.KEY_FICHAS, []);
-    if(carga){
-      ficha = JSON.parse(JSON.stringify(guardadas[+carga.dataset.carga]));
-      LTA.guardarCarrito(ficha);
-      $('#fTitulo').value = ficha.titulo||''; $('#fFecha').value = ficha.fecha||''; $('#fGrupo').value = ficha.grupo||'';
-      pintar();
-    }
-    if(borra){
-      if(!confirm('¿Borrar esta ficha guardada?')) return;
-      guardadas.splice(+borra.dataset.borra,1);
-      LTA.guardar(LTA.KEY_FICHAS, guardadas);
-      pintarGuardadas();
-    }
-  });
-
   pintar();
-  pintarBase();
   pintarGuardadas();
+  pintarBase();
 })();
