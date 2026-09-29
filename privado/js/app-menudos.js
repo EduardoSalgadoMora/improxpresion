@@ -264,7 +264,7 @@
   $('#btnReset').onclick = () => {
     $('#txtBuscar').value=''; $('#selAutor').value=''; $('#selOrden').value='alfa';
     $('#chkFavs').checked=false; $('#chkPropios').checked=false; $('#chkVariantes').checked=false;
-    $('#chkImpro').checked=false;
+    $('#chkImpro').checked=true;
     catsActivas.clear(); montarFiltros(); pintar();
   };
 
