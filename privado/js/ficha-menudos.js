@@ -37,6 +37,7 @@
           <p class="desc">${j.d}</p>
           ${j.v ? `<p class="desc desc-variantes"><em>Variantes: ${j.v}</em></p>` : ''}
           <textarea placeholder="Notas para esta sesión (consignas, adaptaciones al grupo...)" data-nota="${idx}">${item.nota||''}</textarea>
+          <p class="nota-print"></p>
         </div>
         <div class="item-controles">
           <input type="number" class="minutos" min="1" max="120" value="${item.min}" data-min="${idx}" title="Minutos">
@@ -46,6 +47,7 @@
           </div>
           <button class="btn btn-rojo btn-mini" data-quita="${idx}">✕</button>
         </div>`;
+      div.querySelector('.nota-print').textContent = item.nota || '';
       lista.appendChild(div);
     });
     const t = total();
@@ -65,6 +67,7 @@
     }
     if(e.target.dataset.nota !== undefined){
       ficha.items[+e.target.dataset.nota].nota = e.target.value;
+      e.target.nextElementSibling.textContent = e.target.value;
       MA.guardarCarrito(ficha);
     }
   });

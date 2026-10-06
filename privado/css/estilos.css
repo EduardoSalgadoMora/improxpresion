@@ -98,6 +98,7 @@ header.top nav{margin-left:auto;display:flex;gap:10px;align-items:center;flex-wr
 .item-num{background:var(--acento);color:#fff;font-weight:700;border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:grab;user-select:none}
 .item-cuerpo h3{margin:0 0 3px;font-size:1rem}
 .item-cuerpo .desc{font-size:.83rem;color:var(--tinta2);margin:0 0 6px}
+.nota-print{display:none}
 .item-cuerpo textarea{width:100%;border:1px dashed var(--borde);border-radius:7px;padding:7px 9px;font-family:inherit;font-size:.83rem;min-height:34px;resize:vertical;background:#fbfaf7}
 .item-controles{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
 .item-controles .minutos{width:72px;padding:6px 8px;border:1px solid var(--borde);border-radius:7px;font-family:inherit;text-align:center;font-size:.9rem}
@@ -136,7 +137,10 @@ header.top nav{margin-left:auto;display:flex;gap:10px;align-items:center;flex-wr
   /* Descripción recortada a ~3 líneas; variantes y notas fuera del resumen */
   .item-cuerpo .desc{font-size:.7rem;line-height:1.15;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .item-cuerpo .desc-variantes{display:none !important}
-  .item-cuerpo textarea{display:none !important}
+  .item-cuerpo textarea,#ixSalir{display:none !important}
+  /* Las notas de sesión se imprimen completas, como texto */
+  .item-cuerpo .nota-print:not(:empty){display:block;font-size:.74rem;font-weight:600;line-height:1.2;white-space:pre-wrap;margin:2px 0 0;padding-left:5px;border-left:2px solid #000}
+  .item-cuerpo .nota-print:not(:empty)::before{content:"Nota: "}
 
   .item-controles{gap:2px;align-items:flex-end}
   .item-controles .minutos{width:34px;padding:0 2px;font-size:.7rem;border:1px solid #999;border-radius:3px}
