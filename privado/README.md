@@ -37,7 +37,7 @@ web_juegos_impro/   (en el repo de la web: carpeta privado/)
 │   └── ficha-menudos.js   → lógica del creador de fichas — Menudos Artistas
 └── data/
     ├── juegos.js          → base de datos de ImproXpresión (582 juegos)
-    ├── juegos_menudos.js  → base de datos de Menudos Artistas (176 juegos)
+    ├── juegos_menudos.js  → base de datos de Menudos Artistas (177 juegos)
     ├── fichas.js          → fichas de clase predefinidas (FICHAS_BASE y FICHAS_BASE_MENUDOS)
     ├── sagra.js           → datos del mapa de La Sagra
     └── conceptos.js       → glosario (96 conceptos, solo ImproXpresión)
@@ -78,7 +78,7 @@ web_juegos_impro/   (en el repo de la web: carpeta privado/)
 - Para reordenar se arrastra desde el **número** del bloque; así el resto del texto se puede seleccionar y copiar.
 
 ## Dónde se guardan tus datos
-- La base de 582 juegos de ImproXpresión, los 176 de Menudos Artistas y los 96 conceptos viven en `data/juegos.js`, `data/juegos_menudos.js` y `data/conceptos.js` (archivos del disco).
+- La base de 582 juegos de ImproXpresión, los 177 de Menudos Artistas y los 96 conceptos viven en `data/juegos.js`, `data/juegos_menudos.js` y `data/conceptos.js` (archivos del disco).
 - **Todo lo demás vive en el `localStorage` del navegador**, por separado en cada apartado: juegos que creas, ediciones de juegos existentes, favoritos, la ficha en curso y las fichas guardadas. Si cambias de navegador o borras los datos de navegación, se pierde.
 - Por eso existe el botón **⬇ Copia de seguridad** (en cada buscador): descarga un JSON con todos tus datos de ese apartado. Con **⬆ Restaurar copia** los recuperas en cualquier navegador u ordenador.
 - Si quieres consolidar tus juegos/ediciones en la base permanente, pásale la copia de seguridad a Claude y que los integre en `data/juegos.js` o `data/juegos_menudos.js` según toque.
