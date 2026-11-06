@@ -9,13 +9,12 @@ Mientras falte un archivo, se ve un hueco marcado (no rompe nada).
 ## Carteles de Espectáculos (home)
 - `show-impro-cuentos.jpg`
 - `show-el-anciano.jpg`
-- `show-la-biblioteca.jpg`
+- `show-retales-purpura.jpg`
 - `show-impro-remember.jpg`
 
 ## Galerías de cada página de espectáculo (3 fotos por show)
 - `impro-cuentos-1.jpg`, `impro-cuentos-2.jpg`, `impro-cuentos-3.jpg`
 - `el-anciano-1.jpg`, `el-anciano-2.jpg`, `el-anciano-3.jpg`
-- `la-biblioteca-1.jpg`, `la-biblioteca-2.jpg`, `la-biblioteca-3.jpg`
 - `impro-remember-1.jpg`, `impro-remember-2.jpg`, `impro-remember-3.jpg`
 
 ## Dossier
