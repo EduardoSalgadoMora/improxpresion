@@ -19,3 +19,6 @@
   raíz del repositorio en la raíz de la web.
 - **No des por buena ninguna URL pública sin que el usuario la haya comprobado**: desde la sesión no se puede
   abrir improxpresion.com (el proxy lo bloquea). Dilo explícitamente al dar enlaces.
+- La carpeta `improxpresion/` del repositorio contiene SOLO páginas de reenvío: cada dirección antigua
+  `/improxpresion/<página>.html` lleva a `/<página>.html` (y `la-biblioteca.html` a `retales-purpura.html`).
+  No pongas contenido real ahí. Si se crea o se renombra una página, añade también su reenvío.
