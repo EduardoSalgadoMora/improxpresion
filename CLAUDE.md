@@ -32,3 +32,9 @@
 - La carpeta `improxpresion/` del repositorio contiene SOLO páginas de reenvío: cada dirección antigua
   `/improxpresion/<página>.html` lleva a `/<página>.html` (y `la-biblioteca.html` a `retales-purpura.html`).
   No pongas contenido real ahí. Si se crea o se renombra una página, añade también su reenvío.
+
+## Textos de dossieres y propuestas (obligatorio)
+- **Lenguaje inclusivo siempre.** Prioriza palabras que valgan para todo el mundo: "el equipo", "la plantilla",
+  "el público", "las personas asistentes", "especialista", "quien quiera"… Evita el masculino genérico
+  ("vosotros", "juntos", "compañeros", "uno de nosotros", "el experto invitado").
+- **Sin negaciones.** Redacta en positivo: nada de "no", "sin", "nadie", "ni", "todavía no".
