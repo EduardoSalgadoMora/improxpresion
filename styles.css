@@ -74,6 +74,8 @@ img{max-width:100%; display:block}
 .nav{display:flex; align-items:center; gap:30px}
 .nav a{color:#fff; font-family:"Raleway","Poppins",sans-serif; text-transform:uppercase; font-weight:600; font-size:.9rem; letter-spacing:1.2px; transition:color .15s}
 .nav a:hover{color:#ffd9b8}
+.nav a{white-space:nowrap}
+@media (max-width:1240px){.nav{gap:20px} .nav a{font-size:.8rem; letter-spacing:.8px}}
 .menu-btn{display:none; background:none; border:0; color:#fff; cursor:pointer; padding:4px}
 #mnav{display:none; background:var(--blue-dark)}
 
@@ -273,7 +275,7 @@ img{max-width:100%; display:block}
   .shows-grid{grid-template-columns:repeat(2,1fr)}
   .ig-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media (max-width:760px){
+@media (max-width:1080px){
   .nav{display:none}
   .menu-btn{display:block}
   #mnav.open{display:flex; flex-direction:column}
