@@ -13,6 +13,10 @@
   ni propongas conectar el dominio a GitHub Pages: el usuario no lo quiere.
 - **Flujo de publicación (desde el 16-11-2026): el usuario sube los archivos a mano.** NO uses al asistente
   de Aurbox: es lento, publica a medias y sus informes no son fiables.
+  Confirmado el 18-11-2026: el usuario lo sube todo él mismo y funciona. No le prepares prompts para el
+  asistente de Aurbox ni se lo sugieras; entrega siempre el ZIP y la lista de pesos para subirlo a mano.
+  Si el usuario no ha subido aún cambios anteriores, junta en un solo ZIP la versión final de todos los
+  archivos pendientes.
   - Los archivos de la web están en el gestor de archivos de Aurbox: `Drive › Public › websites › improxpresion-1`.
     Esa carpeta es la raíz de la web (`www.improxpresion.com/`) y corresponde a la raíz del repositorio.
   - Tras cada cambio: commit aquí y entrega al usuario un ZIP (con SendUserFile) SOLO con los archivos de la
