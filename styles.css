@@ -69,13 +69,14 @@ img{max-width:100%; display:block}
 /* ===== Cabecera ===== */
 .header{background:var(--blue); position:sticky; top:0; z-index:50}
 .header-inner{max-width:1200px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px}
-.brand{display:flex; align-items:center; gap:12px}
+.brand{display:flex; align-items:center; gap:12px; flex-shrink:0}
 .brand-logo{height:54px; width:auto; display:block}
 .nav{display:flex; align-items:center; gap:30px}
 .nav a{color:#fff; font-family:"Raleway","Poppins",sans-serif; text-transform:uppercase; font-weight:600; font-size:.9rem; letter-spacing:1.2px; transition:color .15s}
 .nav a:hover{color:#ffd9b8}
 .nav a{white-space:nowrap}
-@media (max-width:1240px){.nav{gap:20px} .nav a{font-size:.8rem; letter-spacing:.8px}}
+@media (min-width:1081px){.nav{gap:26px} .nav a{font-size:.84rem; letter-spacing:1px}}
+@media (min-width:1081px) and (max-width:1240px){.nav{gap:18px} .nav a{font-size:.78rem; letter-spacing:.8px}}
 .menu-btn{display:none; background:none; border:0; color:#fff; cursor:pointer; padding:4px}
 #mnav{display:none; background:var(--blue-dark)}
 
