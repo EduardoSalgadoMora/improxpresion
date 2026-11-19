@@ -25,9 +25,9 @@
   // Para añadir/cambiar usuarios: copia una línea y pon su usuario y su hash
   // (genera el hash en la consola con:  ixHash('SU_CLAVE').then(h=>console.log(h))  ).
   var USUARIOS = [
-    { user: 'impro',   hash: 'dca45684609079d56ef15fd268bf5f2414e81d746149796620c2b262cef59131' }, // clave: randomBurger
-    { user: 'edu',     hash: '79768eb5a58b6e7c814c54c7ac8f55e142fe752a4239ef96fd4e1b927a8bae17' }, // clave: impro2025
-    { user: 'abraham', hash: '60d47d7db360765539809b1f95367ffa92105b58184b547951fea484cedf34a6' }  // clave: abraham2025
+    { user: 'impro',   hash: 'dca45684609079d56ef15fd268bf5f2414e81d746149796620c2b262cef59131' },
+    { user: 'edu',     hash: '79768eb5a58b6e7c814c54c7ac8f55e142fe752a4239ef96fd4e1b927a8bae17' },
+    { user: 'abraham', hash: '60d47d7db360765539809b1f95367ffa92105b58184b547951fea484cedf34a6' }
   ];
   var RECORDAR_DIAS = 30;           // cuánto tiempo se recuerda la sesión
   var CLAVE_STORAGE = 'ix_auth';    // dónde se guarda el "ya he entrado"
