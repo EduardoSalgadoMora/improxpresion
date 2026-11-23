@@ -521,3 +521,12 @@ img{max-width:100%; display:block}
 .rp-card p:last-child{margin-bottom:0}
 .rp-tech{max-width:640px; margin:22px auto 0}
 @media (max-width:760px){ .rp-grid{grid-template-columns:1fr} }
+
+/* Tarjeta Red de Artes Escénicas CLM (impro-cuentos) */
+.red-card{display:flex; gap:20px; align-items:center; text-align:left; max-width:720px; margin:30px auto 0; padding:18px 22px; background:var(--paper-2); border:1px solid var(--line); border-left:5px solid var(--orange); border-radius:16px; box-shadow:var(--shadow)}
+.red-card img{width:110px; height:auto; border-radius:10px; flex:none}
+.red-card h3{color:var(--blue); font-size:1.15rem; margin:0 0 6px}
+.red-card p{color:var(--ink); margin:0 0 10px; max-width:none}
+.red-card a{color:var(--orange); font-weight:700; text-decoration:none}
+.red-card a:hover{text-decoration:underline}
+@media (max-width:560px){.show-ficha .show-meta li.meta-wide{display:block; text-align:center}.red-card{flex-direction:column; text-align:center}.red-card img{width:96px}}
